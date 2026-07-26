@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans Arabic', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* Grain texture background */
+.grain {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-position: 0 0, 9px 9px;
+  background-size: 18px 18px;
+}
+
+/* Utility classes */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

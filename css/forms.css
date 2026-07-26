@@ -1,0 +1,94 @@
+/* Input Fields */
+input[type='text'],
+input[type='number'],
+input[type='email'],
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--slate-300);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type='text']:focus,
+input[type='number']:focus,
+input[type='email']:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--orange-500);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* Button */
+button,
+.btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+button:focus,
+.btn:focus {
+  outline: 2px solid var(--orange-500);
+  outline-offset: 2px;
+}
+
+/* Primary Button */
+.btn-primary {
+  background: var(--slate-950);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--slate-800);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background: var(--orange-500);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--orange-600);
+  transform: translateY(-2px);
+}
+
+/* Danger Button */
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* Disabled */
+button:disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--slate-700);
+}

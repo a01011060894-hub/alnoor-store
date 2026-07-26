@@ -1,1 +1,34 @@
-
+{
+  "categories": [
+    {
+      "id": "books",
+      "name": "كتب ومذكرات",
+      "icon": "book-open",
+      "color": "orange"
+    },
+    {
+      "id": "bags",
+      "name": "شنط دعائية",
+      "icon": "shopping-bag",
+      "color": "sky"
+    },
+    {
+      "id": "print",
+      "name": "خدمات الطباعة",
+      "icon": "printer",
+      "color": "emerald"
+    },
+    {
+      "id": "gifts",
+      "name": "هدايا ودروع",
+      "icon": "gift",
+      "color": "purple"
+    },
+    {
+      "id": "balloons",
+      "name": "بالونات",
+      "icon": "balloon",
+      "color": "pink"
+    }
+  ]
+}

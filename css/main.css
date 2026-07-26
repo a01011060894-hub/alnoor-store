@@ -1,0 +1,11 @@
+/* Main CSS file - imports all other stylesheets */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&display=swap');
+
+/* Base styles */
+@import 'variables.css';
+@import 'base.css';
+@import 'text.css';
+@import 'spacing.css';
+@import 'layout.css';
+@import 'forms.css';
+@import 'components.css';
