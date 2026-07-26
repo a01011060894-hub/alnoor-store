@@ -1,102 +1,923 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مؤسسة طريق النور للدعاية والإعلان وخدمات الطباعة</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Cairo', sans-serif; } </style>
-</head>
-<body class="bg-slate-50 text-slate-800">
-
-    <!-- الهيدر -->
-    <header class="bg-slate-900 text-white shadow-lg py-8 px-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold">مؤسسة طريق النور</h1>
-        <p class="text-emerald-400 mt-2 text-sm md:text-base font-semibold">للدعاية والإعلان وخدمات الطباعة</p>
-    </header>
-
-    <main class="max-w-5xl mx-auto p-4 my-6">
-        
-        <!-- نبذة ترحيبية -->
-        <div class="bg-white rounded-2xl shadow-sm p-6 mb-8 text-center border border-slate-100">
-            <h2 class="text-xl font-bold text-slate-800 mb-2">أهلاً بك في منصتنا الرقمية للخدمات الإعلانية والطباعية</h2>
-            <p class="text-slate-600 text-sm">اختر القسم المطلوب، وتعرف على الأسعار والمقاسات، واطلب خدمتك مباشرة عبر الواتساب لتنفذ بأعلى جودة وأسرع وقت.</p>
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260723-05-e9a76f4"}');</script><script src="/_sdk/e358eac22bd01364.telemetry_sdk.js" integrity="sha512-KPxp3rw4K8Nu9ceWJc3gyM7srgaZxiFWOVbyu260EYzzAqdz10mfo5xyXrCx+wEKtGo77JbtmwXvFLbwrGzwvw=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر طريق النور للطباعة</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#0f172a; --paper:#f8fafc; --signal:#ea580c; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Noto Sans Arabic",sans-serif; color:var(--ink); background:var(--paper); }
+    .grain {
+      background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px),radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);
+      background-position:0 0,9px 9px; background-size:18px 18px;
+    }
+    .product-card { transition:transform .25s ease,box-shadow .25s ease; }
+    .product-card .group-hover\\:scale-105 { transform:scale(1.05); }
+    .product-card:hover { transform:translateY(-6px); box-shadow:0 20px 38px rgba(15,23,42,.16); }
+    .drawer { transform:translateX(-110%); transition:transform .32s cubic-bezier(.4,0,.2,1); }
+    .drawer.is-open { transform:translateX(0); }
+    .modal-backdrop { opacity:0; pointer-events:none; transition:opacity .22s ease; }
+    .modal-backdrop.is-open { opacity:1; pointer-events:auto; }
+    .modal-card { transform:translateY(18px) scale(.97); transition:transform .25s ease; }
+    .modal-backdrop.is-open .modal-card { transform:translateY(0) scale(1); }
+    .filter-button.active { background:#0f172a; border-color:#0f172a; color:#fff; box-shadow:0 5px 14px rgba(15,23,42,.16); }
+    .price-chip { background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; }
+    .reveal { animation:reveal .65s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes reveal { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @media(max-width:640px) { .drawer { width:100%; } }
+  </style>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root" class="w-full min-h-screen antialiased">
+  <header data-template-id="site-header" class="canva-header sticky top-0 z-30 border-b border-slate-800 bg-slate-950/95 text-white shadow-md backdrop-blur-md">
+   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href="#top" class="flex items-center gap-3" aria-label="العودة للرئيسية"> <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 text-xl font-black shadow-lg">ط</span>
+     <div>
+      <p data-template-id="brand-name" class="canva-text font-black leading-tight"></p>
+      <p data-template-id="brand-tagline" class="canva-text text-xs text-slate-400"></p>
+     </div></a>
+    <nav class="hidden items-center gap-6 text-sm font-bold md:flex" aria-label="التنقل الرئيسي">
+     <a href="#products" class="transition hover:text-orange-400">الخدمات</a> <a href="#portfolio" class="transition hover:text-orange-400">سابقة أعمالنا</a>
+    </nav>
+    <div class="flex items-center gap-2"><a href="tel:+201011060894" aria-label="الاتصال بالمتجر" class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-emerald-300 transition hover:bg-emerald-400/10 hover:text-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-300"><i data-lucide="phone" class="h-5 w-5"></i></a><button id="admin-toggle" data-template-id="admin-toggle" type="button" class="canva-button inline-flex h-11 w-11 items-center justify-center rounded-xl text-orange-300 transition hover:bg-orange-400/10 hover:text-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-300" aria-label="فتح لوحة التحكم" aria-expanded="false" aria-controls="admin-panel"><i data-lucide="shield" class="h-5 w-5"></i></button><button id="cart-button" data-template-id="cart-button" type="button" class="canva-button relative inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-bold shadow-md transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-orange-300"> <i data-lucide="shopping-bag" class="h-5 w-5"></i> <span class="hidden sm:inline">سلة الطلبات</span> <span id="cart-count" class="grid h-5 min-w-5 place-items-center rounded-full bg-white px-1 text-xs font-black text-slate-950">0</span> </button>
+    </div>
+   </div>
+  </header>
+  <main id="top">
+   <section data-template-id="hero-section" class="canva-banner grain relative overflow-hidden text-white">
+    <div class="absolute inset-0 opacity-25">
+     <img data-template-id="hero-image" loading="lazy" class="canva-image h-full w-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-l from-slate-950 via-slate-950/90 to-slate-950/45"></div>
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
+     <div class="reveal max-w-2xl">
+      <span data-template-id="hero-kicker" class="canva-tag inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-1.5 text-xs font-black ring-1 ring-orange-400/30"> <i data-lucide="sparkles" class="h-4 w-4"></i> </span>
+      <h1 data-template-id="hero-title" class="canva-text mt-5 font-black leading-tight"></h1>
+      <p data-template-id="hero-description" class="canva-text mt-5 max-w-xl leading-8 text-slate-300"></p>
+      <div class="mt-8 flex flex-wrap gap-4">
+       <a data-template-id="hero-cta" href="#products" class="canva-button inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-black shadow-lg transition hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white"> <span>تصفح الخدمات والأسعار</span><i data-lucide="arrow-left" class="h-5 w-5"></i> </a>
+      </div>
+     </div>
+     <div class="reveal rounded-3xl border border-slate-800 bg-slate-900/80 p-6 shadow-2xl backdrop-blur-md" style="animation-delay:.15s">
+      <div class="grid grid-cols-2 gap-4">
+       <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+        <i data-lucide="book-open" class="h-8 w-8 text-orange-500"></i>
+        <p class="mt-4 text-lg font-black text-white">كتب وملفات</p>
+        <p class="mt-1 text-xs leading-6 text-slate-400">طباعة ألوان وأسود لوجه أو وجهين.</p>
+       </div>
+       <div class="rounded-2xl border border-slate-800 bg-slate-950/80 p-5">
+        <i data-lucide="shopping-bag" class="h-8 w-8 text-sky-400"></i>
+        <p class="mt-4 text-lg font-black text-white">شنط دعائية</p>
+        <p class="mt-1 text-xs leading-6 text-slate-400">سلك سكرين وفليكسو بخيارات متعددة.</p>
+       </div>
+       <div class="col-span-2 rounded-2xl border border-slate-800 bg-gradient-to-l from-slate-950 to-slate-900 p-5">
+        <div class="flex items-center gap-4">
+         <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-emerald-400/30 bg-emerald-400/10 text-emerald-400"> <i data-lucide="message-circle" class="h-6 w-6"></i> </span>
+         <div>
+          <p class="font-black text-base text-white">جهّز طلبك وأرسله مباشرة</p>
+          <p class="mt-1 text-xs text-slate-400">احسب السعر، احفظ الطلب في سجل الطلبات، ثم تابع عبر واتساب.</p>
+         </div>
         </div>
-
-        <!-- شبكة الأقسام -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            
-            <!-- قسم الشنط -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                <div>
-                    <div class="text-3xl mb-3">🛍️</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">شنط قماش سلك سكرين</h3>
-                    <p class="text-slate-500 text-xs mb-4">متوفرة بمقاسات متعددة (16x22 حتى 40x50) بطباعة ممتازة وأسعار تنافسية تبدأ من 50 قطعة فأكثر.</p>
-                </div>
-                <a href="https://wa.me/201011060894?text=مرحباً، أود الاستفسار وطلب شنط قماش سلك سكرين" target="_blank" 
-                   class="mt-4 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
-                    طلب واستفسار الشنط 💬
-                </a>
-            </div>
-
-            <!-- قسم البالونات -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                <div>
-                    <div class="text-3xl mb-3">🎈</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">بالونات الدعاية الإعلانية</h3>
-                    <p class="text-slate-500 text-xs mb-4">طباعة شعار مؤسستك أو متجرك على بالونات عالية الجودة لجذب الانتباه في الافتتاحيات والمناسبات.</p>
-                </div>
-                <a href="https://wa.me/201011060894?text=مرحباً، أود الاستفسار وطلب بالونات الدعاية" target="_blank" 
-                   class="mt-4 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
-                    طلب واستفسار البالونات 💬
-                </a>
-            </div>
-
-            <!-- قسم الكروت والمطبوعات -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                <div>
-                    <div class="text-3xl mb-3">📇</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">الكروت الشخصية والمطبوعات</h3>
-                    <p class="text-slate-500 text-xs mb-4">كروت كوشيه (وجه واحد أو وجهين) وكرستال بأعلى دقة طباعة وأفضل خامات لتلائم هويتك البصرية.</p>
-                </div>
-                <a href="https://wa.me/201011060894?text=مرحباً، أود الاستفسار عن الكروت الشخصية والمطبوعات" target="_blank" 
-                   class="mt-4 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
-                    طلب الكروت والمطبوعات 💬
-                </a>
-            </div>
-
-            <!-- قسم شاشات الليد -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
-                <div>
-                    <div class="text-3xl mb-3">🖥️</div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">شاشات الإعلان الليد (LED Screens)</h3>
-                    <p class="text-slate-500 text-xs mb-4">تصميم وتوريد وتركيب وبرمجة وصيانة شاشات الليد الداخلية والخارجية وغرف الاجتماعات بأعلى مواصفات.</p>
-                </div>
-                <a href="https://wa.me/201011060894?text=مرحباً، أود الاستفسار عن شاشات الإعلان الليد وتوريدها" target="_blank" 
-                   class="mt-4 block text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
-                    استعلام عن شاشات الليد 💬
-                </a>
-            </div>
-
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="products" class="w-full py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+     <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+      <div>
+       <p data-template-id="catalog-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+       <h2 data-template-id="catalog-title" class="canva-text mt-2 font-black text-slate-950"></h2>
+       <p data-template-id="catalog-description" class="canva-text mt-3 max-w-2xl leading-7 text-slate-600"></p>
+      </div>
+      <div class="relative w-full md:max-w-sm">
+       <label data-template-id="search-label" for="search-input" class="canva-text sr-only"></label> <i data-lucide="search" class="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"></i> <input id="search-input" type="search" class="w-full rounded-2xl border border-slate-300 bg-white py-3 pr-11 pl-4 text-sm font-medium outline-none shadow-sm transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+      </div>
+     </div>
+     <div id="filter-list" class="mt-8 flex flex-wrap gap-2.5" role="group" aria-label="تصفية المنتجات">
+      <button type="button" class="filter-button active rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="all">الكل</button> <button type="button" class="filter-button rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="books">كتب</button> <button type="button" class="filter-button rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="bags">شنط</button> <button type="button" class="filter-button rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="print">طباعة</button> <button type="button" class="filter-button rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="gifts">هدايا ودروع</button> <button type="button" class="filter-button rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-400" data-filter="balloons">بالونات</button>
+     </div>
+     <div id="product-grid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+     <div id="no-results" class="hidden rounded-3xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center shadow-sm">
+      <i data-lucide="search-x" class="mx-auto h-12 w-12 text-slate-400"></i>
+      <p data-template-id="no-results-title" class="canva-text mt-4 font-black text-slate-800"></p>
+      <p data-template-id="no-results-text" class="canva-text mt-1 text-sm text-slate-500"></p>
+     </div>
+    </div>
+   </section>
+   <section id="portfolio" data-template-id="portfolio-section" class="canva-section w-full bg-white py-16 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+     <div class="mx-auto max-w-3xl text-center">
+      <p data-template-id="portfolio-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+      <h2 data-template-id="portfolio-title" class="canva-text mt-2 font-black text-slate-950"></h2>
+      <p data-template-id="portfolio-description" class="canva-text mt-3 leading-7 text-slate-600"></p>
+     </div>
+     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article data-template-id="portfolio-stat-1" class="canva-card rounded-3xl border border-orange-100 bg-orange-50 p-6 text-center">
+       <p data-template-id="portfolio-stat-1-value" class="canva-text text-3xl font-black text-orange-600"></p>
+       <p data-template-id="portfolio-stat-1-label" class="canva-text mt-2 font-bold text-slate-700"></p>
+      </article>
+      <article data-template-id="portfolio-stat-2" class="canva-card rounded-3xl border border-sky-100 bg-sky-50 p-6 text-center">
+       <p data-template-id="portfolio-stat-2-value" class="canva-text text-3xl font-black text-sky-600"></p>
+       <p data-template-id="portfolio-stat-2-label" class="canva-text mt-2 font-bold text-slate-700"></p>
+      </article>
+      <article data-template-id="portfolio-stat-3" class="canva-card rounded-3xl border border-emerald-100 bg-emerald-50 p-6 text-center">
+       <p data-template-id="portfolio-stat-3-value" class="canva-text text-3xl font-black text-emerald-600"></p>
+       <p data-template-id="portfolio-stat-3-label" class="canva-text mt-2 font-bold text-slate-700"></p>
+      </article>
+      <article data-template-id="portfolio-stat-4" class="canva-card rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center">
+       <p data-template-id="portfolio-stat-4-value" class="canva-text text-3xl font-black text-slate-900"></p>
+       <p data-template-id="portfolio-stat-4-label" class="canva-text mt-2 font-bold text-slate-700"></p>
+      </article>
+     </div>
+     <div class="relative mt-10 overflow-hidden rounded-3xl bg-slate-950 shadow-2xl" aria-label="معرض سابقة الأعمال">
+      <div id="portfolio-slider" class="relative h-64 sm:h-80 lg:h-[28rem]"><img data-template-id="portfolio-slide-1" loading="lazy" class="canva-image portfolio-slide absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-700"> <img data-template-id="portfolio-slide-2" loading="lazy" class="canva-image portfolio-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700"> <img data-template-id="portfolio-slide-3" loading="lazy" class="canva-image portfolio-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700"> <img data-template-id="portfolio-slide-4" loading="lazy" class="canva-image portfolio-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700"> <img data-template-id="portfolio-slide-5" loading="lazy" class="canva-image portfolio-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700">
+       <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+       <div class="absolute bottom-5 right-5 left-5 flex items-end justify-between gap-4 text-white">
+        <div>
+         <p data-template-id="portfolio-slider-label" class="canva-text text-sm font-black"></p>
+         <p data-template-id="portfolio-slider-caption" class="canva-text mt-1 text-xs text-slate-300"></p>
         </div>
-
-        <!-- صندوق التواصل العام -->
-        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center shadow-sm">
-            <h3 class="text-emerald-900 font-bold text-lg mb-2">هل تحتاج إلى تصميم خاص أو استشارة فنية لمشروعك؟</h3>
-            <p class="text-emerald-700 text-sm mb-4">فريق مؤسسة طريق النور مستعد لدعمك وتقديم أفضل الحلول الإعلانية والطباعية.</p>
-            <a href="https://wa.me/201011060894?text=مرحباً، لدي مشروع أو استفسار خاص وأريد التحدث مع خدمة العملاء" target="_blank" 
-               class="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl shadow transition">
-                💬 تواصل معنا مباشرة عبر الواتساب (01011060894)
-            </a>
+        <div class="flex items-center gap-2">
+         <button id="portfolio-prev" type="button" class="grid h-10 w-10 place-items-center rounded-full bg-white/15 backdrop-blur transition hover:bg-white/30" aria-label="العمل السابق"><i data-lucide="chevron-right" class="h-5 w-5"></i></button><button id="portfolio-next" type="button" class="grid h-10 w-10 place-items-center rounded-full bg-orange-600 transition hover:bg-orange-500" aria-label="العمل التالي"><i data-lucide="chevron-left" class="h-5 w-5"></i></button>
         </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="calculator" data-template-id="calculator-section" class="canva-section hidden w-full bg-orange-50 py-16 sm:py-24">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[.8fr_1.2fr]">
+     <div>
+      <p data-template-id="calculator-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+      <p data-template-id="calculator-description" class="canva-text mt-4 max-w-xl leading-8 text-slate-600"></p>
+     </div>
+     <form id="calculator-form" class="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl sm:p-8">
+      <div class="grid gap-5 sm:grid-cols-2">
+       <div>
+        <label data-template-id="calc-quantity-label" for="calc-quantity" class="canva-text mb-2 block text-sm font-black text-slate-800"></label> <input id="calc-quantity" type="number" min="1" value="100" class="w-full rounded-xl border border-slate-300 px-4 py-3 font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+       </div>
+       <div>
+        <label data-template-id="calc-base-label" for="calc-base" class="canva-text mb-2 block text-sm font-black text-slate-800"></label> <input id="calc-base" type="number" min="0" step="0.01" value="150" class="w-full rounded-xl border border-slate-300 px-4 py-3 font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+       </div>
+       <div>
+        <label data-template-id="calc-extra-label" for="calc-extra" class="canva-text mb-2 block text-sm font-black text-slate-800"></label> <input id="calc-extra" type="number" min="0" step="0.01" value="0" class="w-full rounded-xl border border-slate-300 px-4 py-3 font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+       </div>
+       <div class="rounded-xl bg-slate-950 p-4 text-white">
+        <p data-template-id="calc-unit-result-label" class="canva-text text-xs font-bold text-slate-400"></p><strong id="calc-unit-result" class="mt-1 block text-2xl font-black text-orange-400">0 ج.م</strong>
+       </div>
+      </div>
+      <div class="mt-5 flex flex-col justify-between gap-4 rounded-2xl border border-orange-100 bg-orange-50 p-5 sm:flex-row sm:items-center">
+       <div>
+        <p data-template-id="calc-total-result-label" class="canva-text text-sm font-black text-slate-800"></p><strong id="calc-total-result" class="mt-1 block text-3xl font-black text-orange-600">0 ج.م</strong>
+       </div><button data-template-id="calc-button" type="submit" class="canva-button rounded-xl px-5 py-3 font-black transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-orange-400"></button>
+      </div>
+     </form>
+    </div>
+   </section>
+   <section id="admin-panel" data-template-id="admin-panel" class="canva-section hidden w-full bg-slate-900 py-16 text-white sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+     <div class="max-w-2xl">
+      <p data-template-id="admin-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+      <h2 data-template-id="admin-title" class="canva-text mt-2 font-black"></h2>
+      <p data-template-id="admin-description" class="canva-text mt-4 leading-8 text-slate-300"></p>
+     </div>
+     <div class="mt-8 grid gap-6 lg:grid-cols-[.8fr_1.2fr]">
+      <form id="pricing-form" class="rounded-3xl border border-slate-700 bg-slate-950 p-6 shadow-xl">
+       <label data-template-id="margin-label" for="margin-input" class="canva-text mb-3 block font-bold"></label>
+       <div class="flex items-center gap-3">
+        <input id="margin-input" type="number" min="0" max="500" step="1" value="0" class="canva-input w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-500/20"> <span class="font-black text-orange-400">%</span>
+       </div><button data-template-id="margin-save-button" type="submit" class="canva-button mt-4 w-full rounded-xl px-5 py-3 font-black"></button>
+       <p id="margin-message" class="mt-3 hidden text-sm font-bold" aria-live="polite"></p>
+      </form>
+      <div class="rounded-3xl border border-slate-700 bg-slate-950 p-6 shadow-xl">
+       <h3 data-template-id="orders-title" class="canva-text font-black"></h3>
+       <p data-template-id="orders-description" class="canva-text mt-2 leading-7 text-slate-400"></p>
+       <div class="mt-5 grid grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-slate-900 p-4">
+         <span data-template-id="orders-count-label" class="canva-text text-xs text-slate-400"></span> <strong id="admin-orders-count" class="mt-1 block text-2xl font-black text-orange-400">0</strong>
+        </div>
+        <div class="rounded-2xl bg-slate-900 p-4">
+         <span data-template-id="margin-current-label" class="canva-text text-xs text-slate-400"></span> <strong id="admin-margin-value" class="mt-1 block text-2xl font-black text-emerald-400">0%</strong>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="notes" class="w-full bg-slate-950 py-16 text-white sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+     <div class="max-w-2xl">
+      <p data-template-id="notes-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+      <h2 data-template-id="notes-title" class="canva-text mt-2 font-black"></h2>
+      <p data-template-id="notes-description" class="canva-text mt-3 leading-7 text-slate-300"></p>
+     </div>
+     <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      <article data-template-id="note-card-1" class="canva-card rounded-3xl border border-slate-800 p-7">
+       <span class="grid h-12 w-12 place-items-center rounded-2xl bg-orange-500/10 text-orange-400"><i data-lucide="package-check" class="h-6 w-6"></i></span>
+       <h3 data-template-id="note-card-1-title" class="canva-text mt-6 font-black"></h3>
+       <p data-template-id="note-card-1-text" class="canva-text mt-3 leading-7 text-slate-400"></p>
+      </article>
+      <article data-template-id="note-card-2" class="canva-card rounded-3xl border border-slate-800 p-7">
+       <span class="grid h-12 w-12 place-items-center rounded-2xl bg-sky-500/10 text-sky-400"><i data-lucide="ruler" class="h-6 w-6"></i></span>
+       <h3 data-template-id="note-card-2-title" class="canva-text mt-6 font-black"></h3>
+       <p data-template-id="note-card-2-text" class="canva-text mt-3 leading-7 text-slate-400"></p>
+      </article>
+      <article data-template-id="note-card-3" class="canva-card rounded-3xl border border-slate-800 p-7">
+       <span class="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-500/10 text-emerald-400"><i data-lucide="message-circle" class="h-6 w-6"></i></span>
+       <h3 data-template-id="note-card-3-title" class="canva-text mt-6 font-black"></h3>
+       <p data-template-id="note-card-3-text" class="canva-text mt-3 leading-7 text-slate-400"></p>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <section id="faq" data-template-id="faq-section" class="canva-section w-full bg-orange-50 py-16 sm:py-20">
+   <div class="mx-auto max-w-4xl px-4 sm:px-6">
+    <div class="text-center">
+     <p data-template-id="faq-kicker" class="canva-text text-xs font-black tracking-wider uppercase"></p>
+     <h2 data-template-id="faq-title" class="canva-text mt-2 font-black text-slate-950"></h2>
+     <p data-template-id="faq-description" class="canva-text mt-3 leading-7 text-slate-600"></p>
+    </div>
+    <div class="mt-8 space-y-3" id="faq-list">
+     <article class="overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-sm">
+      <button type="button" class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-4 text-right font-black text-slate-900" aria-expanded="false"><span data-template-id="faq-question-1" class="canva-text"></span><i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-orange-600"></i></button>
+      <div class="faq-answer hidden px-5 pb-5 text-sm leading-7 text-slate-600"><span data-template-id="faq-answer-1" class="canva-text"></span>
+      </div>
+     </article>
+     <article class="overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-sm">
+      <button type="button" class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-4 text-right font-black text-slate-900" aria-expanded="false"><span data-template-id="faq-question-2" class="canva-text"></span><i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-orange-600"></i></button>
+      <div class="faq-answer hidden px-5 pb-5 text-sm leading-7 text-slate-600"><span data-template-id="faq-answer-2" class="canva-text"></span>
+      </div>
+     </article>
+     <article class="overflow-hidden rounded-2xl border border-orange-100 bg-white shadow-sm">
+      <button type="button" class="faq-toggle flex w-full items-center justify-between gap-4 px-5 py-4 text-right font-black text-slate-900" aria-expanded="false"><span data-template-id="faq-question-3" class="canva-text"></span><i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-orange-600"></i></button>
+      <div class="faq-answer hidden px-5 pb-5 text-sm leading-7 text-slate-600"><span data-template-id="faq-answer-3" class="canva-text"></span>
+      </div>
+     </article>
+    </div>
+   </div>
+  </section><a data-template-id="floating-whatsapp" href="https://wa.me/201011060894" target="_blank" rel="noopener noreferrer" aria-label="محادثة واتساب مع المبيعات" class="canva-button fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3.5 font-black text-white shadow-xl transition hover:-translate-y-1 hover:bg-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-200"><i data-lucide="message-circle" class="h-5 w-5"></i><span>تحدث معنا على واتساب</span></a>
+  <footer data-template-id="site-footer" class="canva-footer border-t border-slate-800 bg-slate-950 text-slate-400">
+   <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
+    <div>
+     <p data-template-id="footer-title" class="canva-text font-black text-white"></p>
+     <p data-template-id="footer-text" class="canva-text mt-1 text-xs"></p>
+    </div><a data-template-id="footer-whatsapp" href="https://wa.me/201011060894" target="_blank" rel="noopener noreferrer" class="canva-link inline-flex items-center gap-2 font-bold transition hover:underline"> <i data-lucide="message-circle" class="h-5 w-5"></i> </a>
+   </div>
+  </footer>
+  <div id="cart-overlay" class="fixed inset-0 z-40 hidden bg-slate-950/60 backdrop-blur-sm"></div>
+  <aside id="cart-drawer" class="drawer fixed left-0 top-0 z-50 flex h-full w-[420px] max-w-full flex-col bg-white shadow-2xl" aria-label="سلة المشتريات" aria-hidden="true">
+   <div class="flex items-center justify-between border-b border-slate-200 px-6 py-5">
+    <div>
+     <h2 data-template-id="cart-title" class="canva-text font-black text-slate-950"></h2>
+     <p data-template-id="cart-subtitle" class="canva-text mt-1 text-xs text-slate-500"></p>
+    </div><button id="close-cart" data-template-id="close-cart-button" type="button" class="canva-button grid h-10 w-10 place-items-center rounded-xl transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-orange-400" aria-label="إغلاق السلة"> <i data-lucide="x" class="h-5 w-5"></i> </button>
+   </div>
+   <div id="cart-items" class="flex-1 space-y-4 overflow-y-auto p-6"></div>
+   <div id="cart-empty" class="flex flex-1 flex-col items-center justify-center p-8 text-center">
+    <span class="grid h-16 w-16 place-items-center rounded-3xl border border-orange-100 bg-orange-50 text-orange-600"><i data-lucide="shopping-bag" class="h-8 w-8"></i></span>
+    <h3 data-template-id="cart-empty-title" class="canva-text mt-4 font-black text-slate-900"></h3>
+    <p data-template-id="cart-empty-text" class="canva-text mt-2 text-xs leading-6 text-slate-500"></p>
+   </div>
+   <div class="border-t border-slate-200 bg-slate-50 p-6">
+    <div class="flex items-center justify-between">
+     <span data-template-id="cart-total-label" class="canva-text font-bold text-slate-700"></span> <strong id="cart-total" class="text-2xl font-black text-orange-600">0 ج.م</strong>
+    </div><button id="whatsapp-button" data-template-id="whatsapp-button" type="button" class="canva-button mt-5 flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 font-black shadow-lg transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-emerald-300" disabled> <i data-lucide="message-circle" class="h-5 w-5"></i><span>حفظ وإرسال الطلب عبر واتساب</span> </button>
+    <p id="order-message" class="mt-3 hidden text-center text-xs font-bold" aria-live="polite"></p>
+   </div>
+  </aside>
+  <div id="product-modal" class="modal-backdrop fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-hidden="true">
+   <div class="modal-card max-h-[calc(90*min(var(--vh,1vh),1vh))] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+    <div class="flex items-start justify-between gap-4 border-b border-slate-100 px-6 py-5 sm:px-8">
+     <div>
+      <span id="modal-category" class="text-xs font-black tracking-wider text-orange-600"></span>
+      <h2 id="modal-title" class="mt-1 text-2xl font-black text-slate-950"></h2>
+     </div><button id="close-modal" data-template-id="close-modal-button" type="button" class="canva-button grid h-10 w-10 shrink-0 place-items-center rounded-xl transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-orange-400" aria-label="إغلاق التفاصيل"> <i data-lucide="x" class="h-5 w-5"></i> </button>
+    </div>
+    <div class="grid gap-6 p-6 sm:grid-cols-[.8fr_1.2fr] sm:p-8">
+     <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+      <img data-template-id="modal-product-image" loading="lazy" class="canva-image h-full min-h-[220px] w-full object-cover"> <img data-template-id="modal-indoor-image" loading="lazy" class="canva-image hidden h-full min-h-[220px] w-full object-cover"> <img data-template-id="modal-outdoor-image" loading="lazy" class="canva-image hidden h-full min-h-[220px] w-full object-cover">
+     </div>
+     <form id="product-form">
+      <p id="modal-description" class="text-sm leading-7 text-slate-600"></p>
+      <div id="options-area" class="mt-5 space-y-4"></div>
+      <div id="dimensions-area" class="mt-5 hidden rounded-2xl border border-amber-200 bg-amber-50/70 p-4">
+       <div class="mb-3 flex items-center gap-2 text-xs font-black text-amber-900"><i data-lucide="ruler" class="h-4 w-4 text-orange-600"></i><span>أبعاد التصميم بالمتر</span>
+       </div>
+       <div class="grid grid-cols-2 gap-3">
+        <div>
+         <label for="modal-width" class="mb-1 block text-xs font-bold text-slate-700">العرض بالمتر</label> <input id="modal-width" type="number" step="0.05" min="0.1" value="1" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+        </div>
+        <div>
+         <label for="modal-height" class="mb-1 block text-xs font-bold text-slate-700">الارتفاع بالمتر</label> <input id="modal-height" type="number" step="0.05" min="0.1" value="1" class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+        </div>
+       </div>
+      </div>
+      <div class="mt-5">
+       <label id="quantity-label" for="modal-quantity" class="mb-2 block text-xs font-black text-slate-700">الكمية المطلوبة</label>
+       <div class="flex items-center gap-3">
+        <button id="decrease-quantity" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-400" aria-label="تقليل الكمية"><i data-lucide="minus" class="h-4 w-4"></i></button> <input id="modal-quantity" type="number" min="1" value="1" class="h-11 w-28 rounded-xl border border-slate-300 text-center font-black outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"> <button id="increase-quantity" type="button" class="grid h-11 w-11 place-items-center rounded-xl border border-slate-300 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-orange-400" aria-label="زيادة الكمية"><i data-lucide="plus" class="h-4 w-4"></i></button>
+       </div>
+      </div>
+      <div class="mt-6 rounded-2xl bg-slate-950 p-5 text-white">
+       <p class="text-xs font-bold text-slate-400">الإجمالي التقديري لهذا الخيار</p>
+       <p id="modal-price" class="mt-1 text-2xl font-black text-orange-400">0 ج.م</p>
+       <p id="modal-price-note" class="mt-1 text-xs leading-6 text-slate-400"></p>
+      </div><button data-template-id="add-to-cart-button" type="submit" class="canva-button mt-5 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 font-black transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-orange-400"> <i data-lucide="plus-circle" class="h-5 w-5"></i><span>إضافة إلى السلة</span> </button>
+     </form>
+    </div>
+   </div>
+  </div>
+  <script src="/_sdk/c939c145c3c74230.editing_sdk.js" integrity="sha512-jh2pv/gl9Gzzn5dxfzwQO4wkqtnAQIim+LIUDYfVu2cdqPkQV2MqbjsDUW5IYbrSZFjRlOBrIWzlvWDXQYxOjg=="></script>
+  <script>
+    const currency = value => new Intl.NumberFormat("ar-EG", {
+      style:"currency", currency:"EGP", maximumFractionDigits:2
+    }).format(value).replace("EGP","ج.م");
 
-    </main>
+    const categoryNames = {
+      books:"كتب ومذكرات",
+      bags:"شنط دعائية",
+      print:"خدمات الطباعة",
+      gifts:"هدايا ودروع",
+      balloons:"بالونات"
+    };
 
-    <!-- الفوتر -->
-    <footer class="bg-slate-900 text-slate-400 text-center py-6 text-xs mt-12">
-        <p>© 2026 مؤسسة طريق النور للدعاية والإعلان وخدمات الطباعة. جميع الحقوق محفوظة.</p>
-    </footer>
+    const flexoBags = {
+      "يد داخلية": [
+        ["15 × 20 سم",2.18],["20 × 20 سم",2.3],["20 × 25 سم",2.4],["25 × 25 سم",2.62],["25 × 30 سم",2.93],["30 × 30 سم",3.59],["30 × 35 سم",3.9],["35 × 35 سم",4.66],["30 × 40 سم",4.66],["35 × 40 سم",4.76],["40 × 40 سم",5.03],["35 × 45 سم",5.03],["40 × 45 سم",5.62],["45 × 45 سم",6.13],["40 × 50 سم",6.13],["45 × 50 سم",6.76],["40 × 55 سم",6.76],["50 × 50 سم",7.37],["45 × 55 سم",7.37],["50 × 55 سم",8.22],["55 × 55 سم",8.56],["50 × 60 سم",8.56],["55 × 60 سم",9.41],["60 × 60 سم",9.73],["60 × 70 سم",11.42],["65 × 80 سم",17.63]
+      ],
+      "يد خارجية": [
+        ["30 × 30 سم",3.94],["30 × 35 سم",4.25],["35 × 35 سم",5.01],["30 × 40 سم",5.01],["35 × 40 سم",5.11],["40 × 40 سم",5.38],["35 × 45 سم",5.38],["40 × 45 سم",5.97],["45 × 45 سم",6.48],["40 × 50 سم",6.48],["45 × 50 سم",7.11],["40 × 55 سم",7.11],["50 × 50 سم",7.72],["45 × 55 سم",7.72],["50 × 55 سم",8.57],["55 × 55 سم",8.91],["50 × 60 سم",8.91],["55 × 60 سم",9.76],["60 × 60 سم",10.08],["60 × 70 سم",11.77],["65 × 80 سم",17.98]
+      ],
+      "بولكس": [
+        ["25 × 30 سم",4.85],["30 × 30 سم",5.63],["30 × 35 سم",6.62],["35 × 35 سم",6.18],["30 × 40 سم",6.18],["35 × 40 سم",6.84],["40 × 40 سم",7.61],["40 × 45 سم",8.16],["40 × 50 سم",8.38],["40 × 55 سم",9.05]
+      ],
+      "تورنة": [
+        ["25 × 25 سم",6.78],["30 × 30 سم",7.49],["30 × 35 سم",8.08],["35 × 35 سم",8.58],["35 × 40 سم",9.01],["40 × 40 سم",9.48],["40 × 45 سم",9.67],["45 × 45 سم",9.91]
+      ]
+    };
 
-</body>
+    const products = [
+      {
+        id:"books", category:"books", title:"طباعة كتب ومذكرات وأبحاث A4",
+        description:"طباعة صفحات A4 بالألوان أو الأبيض والأسود، وجه أو وجهين، مناسبة للكتب والمذكرات والأبحاث.",
+        options:[
+          {label:"نوع الطباعة", values:["ألوان","أبيض وأسود"]},
+          {label:"طريقة الطباعة", values:["وجه واحد","وجهين"]}
+        ],
+        calculate(quantity, selected) {
+          const table=[[0.55,0.75],[0.4,0.5]];
+          return table[selected[0] || 0][selected[1] || 0] * quantity;
+        },
+        quantityLabel:"عدد الصفحات المطلوب طباعتها",
+        note:"السعر محسوب لكل صفحة وفق نوع الطباعة وعدد الأوجه."
+      },
+      {
+        id:"screenbags", category:"bags", isPackage:true, title:"شنط قماش سلك سكرين",
+        description:"شنط قماش بطباعة لون واحد ووجه واحد، شاملة الشنطة والطباعة مع إمكانية إضافة لون أو وجه ثانٍ.",
+        options:[
+          {label:"مقاس الشنطة", values:["16 × 22 سم","20 × 25 سم","25 × 30 سم","30 × 40 سم","40 × 50 سم"]},
+          {label:"شريحة الكمية", values:["50 قطعة","100 قطعة","200 قطعة","300 قطعة","400 قطعة","500 قطعة"]},
+          {label:"إضافات الطباعة", values:["بدون إضافات","لون ثانٍ أو وجه ثانٍ","لون ثانٍ ووجه ثانٍ"]}
+        ],
+        prices:[
+          [350,490,840,1170,1490,1820],
+          [390,575,1010,1420,1830,2240],
+          [390,660,1150,1630,2110,2590],
+          [490,840,1500,2170,2830,3500],
+          [660,1090,2060,3010,3950,4900]
+        ],
+        quantityByTier:[50,100,200,300,400,500],
+        calculate(quantity, selected) {
+          const base=this.prices[selected[0] || 0][selected[1] || 0];
+          const extraMultiplier=[1,1.15,1.3][selected[2] || 0];
+          return base * extraMultiplier;
+        },
+        quantityLabel:"عدد الشنط المطلوبة",
+        note:"الحد الأدنى 50 قطعة. الأسعار الأساسية بحسب شريحة الكمية المختارة."
+      },
+      {
+        id:"flexobags", category:"bags", title:"شنط قماش غير منسوج فليكسو",
+        description:"شنط صديقة للبيئة بطباعة فليكسو لون واحد ووجه واحد، متاحة بيد داخلية وخارجية وبولكس وتورنة.",
+        isFlexo:true, quantityLabel:"عدد الشنط المطلوبة", note:"الحد الأدنى للتصنيع 1,000 قطعة. السعر محسوب للقطعة."
+      },
+      {
+        id:"balloons", category:"balloons", isPackage:true, title:"بالونات الدعاية والإعلان",
+        description:"بالونات دعائية عالية الجودة بطباعة شعار أو تصميم مخصص، مع أسعار تدريجية حسب الكمية.",
+        options:[{label:"باقة البالونات", values:["100 بالونة","200 بالونة","300 بالونة","500 بالونة","1,000 بالونة"]}],
+        prices:[500,900,1300,1800,3000],
+        quantities:[100,200,300,500,1000],
+        calculate(quantity, selected) {
+          return this.prices[selected[0] || 0] * (quantity / this.quantities[selected[0] || 0]);
+        },
+        quantityLabel:"عدد الباقات المطلوبة",
+        note:"السعر يشمل طباعة الشعار أو التصميم المخصص على البالونات."
+      },
+      {
+        id:"cards", category:"print", isPackage:true, title:"الكروت الشخصية والبطاقات",
+        description:"كروت شخصية وتجارية بخامات كوشيه وفبريانو وكريستال، بأسعار محدثة تشمل الزيادة.",
+        options:[
+          {label:"الخامة والطباعة", values:["كوشيه وجه واحد","كوشيه وجهين","كوشيه مسلفن وجه واحد","كوشيه مسلفن وجهين","فبريانو وجه واحد","فبريانو وجهين","كريستال وجه واحد","كريستال وجهين"]},
+          {label:"عدد الكروت", values:["125 كارت","200 كارت","300 كارت","500 كارت","1000 كارت"]}
+        ],
+        prices:[
+          [165,225,262.5,405,675],[195,270,345,525,750],[180,262.5,285,450,750],[225,300,375,600,900],
+          [225,337.5,420,675,1050],[262.5,450,495,787.5,1350],[262.5,375,450,750,1200],[300,525,637.5,900,1500]
+        ],
+        calculate(quantity, selected) { return this.prices[selected[0] || 0][selected[1] || 0] * quantity; },
+        quantityLabel:"عدد الباقات المطلوبة",
+        note:"الأسعار المعروضة للباقة المختارة بعد الزيادة المحدثة."
+      },
+      {
+        id:"digital", category:"print", title:"طباعة ديجيتال ورقية",
+        description:"طباعة ديجيتال بمقاسات متعددة وأسعار متدرجة حسب الكمية.",
+        options:[{label:"مقاس الطباعة", values:["33 × 48.5 سم","35 × 50 سم","35 × 65 سم"]}],
+        calculate(quantity, selected) {
+          const index=selected[0] || 0;
+          const tiers=quantity<=20 ? [22.5,22.5,37.5] : quantity<=100 ? [10.5,12,22.5] : quantity<=1000 ? [7.5,9,18] : [6,7.5,15];
+          return tiers[index] * quantity;
+        },
+        quantityLabel:"عدد الطبعات المطلوبة",
+        note:"يتم اختيار سعر الوحدة تلقائياً وفق شريحة الكمية."
+      },
+      {
+        id:"indoor", category:"print", title:"طباعة إن دوور",
+        description:"خامات إن دوور للملصقات والكانفس والبانر والباك لايت بحساب المتر المربع.",
+        hasDimensions:true,
+        options:[{label:"الخامة", values:["فينيل أبيض أو شفاف","بانر مط أو لامع","بانر ثقيل","كانفس جليتر","كانفس مط","بيبى فيلم","باك لايت","فينيل عاكس","فينيل مصنفر","كانفس ستيكر","فينيل هولوجرام"]}],
+        prices:[150,150,195,270,300,225,375,345,337.5,187.5,315],
+        quantityLabel:"عدد اللوحات أو التصاميم",
+        note:"السعر محسوب وفق مساحة التصميم بالمتر المربع."
+      },
+      {
+        id:"outdoor", category:"print", title:"طباعة أوت دوور",
+        description:"لافتات بانر وفينيل وفليكس وخامات خارجية بحساب المتر المربع.",
+        hasDimensions:true,
+        options:[{label:"الخامة", values:["بانر","بانر خفيف","بانر عاكس","بانر كوتد","فينيل أبيض أو شفاف","فينيل + سلوفان","بليثرو","فليكس","فليكس أسود","فينيل عاكس","بانر تروجان","كانفس جليتر"]}],
+        prices:[135,90,405,187.5,135,210,210,195,210,330,180,247.5],
+        quantityLabel:"عدد اللوحات أو التصاميم",
+        note:"السعر محسوب وفق مساحة التصميم بالمتر المربع."
+      },
+      {
+        id:"cut", category:"print", title:"كاتر بلوتر وبرنت أند كت",
+        description:"خدمات فينيل وكاتر بلوتر وبرنت أند كت بخامات متنوعة وحساب للمتر المربع.",
+        hasDimensions:true,
+        options:[{label:"الخدمة والخامة", values:["كاتر: فينيل ألوان","كاتر: فينيل أسود","كاتر: فينيل مصنفر ألماني","كاتر: فينيل فوسفوري","كاتر: فينيل عاكس","كاتر: فينيل ذهبي أو فضي","كاتر: فينيل فضي مرايا","كاتر: فورمة ورق","كاتر: فينيل حراري ألوان","برنت أند كت: فينيل أبيض أو شفاف","برنت أند كت: فينيل حراري","برنت أند كت: فينيل عاكس","برنت أند كت: فينيل ذهبي","برنت أند كت: فينيل ليزر RGB"]}],
+        prices:[135,150,300,270,300,150,180,45,300,210,450,405,285,390],
+        quantityLabel:"عدد التصاميم",
+        note:"السعر محسوب وفق مساحة التصميم بالمتر المربع."
+      },
+      {
+        id:"rollup", category:"print", isPackage:true, title:"ستاندات رول أب",
+        description:"ستاندات رول أب شاملة الطباعة، مناسبة للمعارض والفعاليات ونقاط البيع.",
+        options:[{label:"مقاس الرول أب", values:["85 × 200 سم","100 × 200 سم"]}],
+        prices:[1050,1305],
+        calculate(quantity, selected) { return this.prices[selected[0] || 0]; },
+        quantityLabel:"عدد الستاندات المطلوبة",
+        note:"يشمل السعر الطباعة والستاند."
+      },
+      {
+        id:"gifts", category:"gifts", title:"هدايا ودروع تذكارية",
+        description:"مجات دعائية ودروع خشب وقطيفة وكريستال بمقاسات وخيارات مناسبة للمناسبات الرسمية.",
+        options:[{label:"اختر المنتج", values:["مج أبيض","مج سحري","مج أبيض ملون داخلي","درع خشب وسط","درع خشب كبير","درع قطيفة صغير","درع قطيفة وسط","درع قطيفة كبير","درع كريستال صغير","درع كريستال وسط","درع كريستال كبير"]}],
+        prices:[100,150,120,400,650,100,150,200,150,250,350],
+        quantityLabel:"عدد القطع المطلوبة",
+        note:"يمكن تأكيد الاسم والشعار والتصميم النهائي مع المتجر قبل التنفيذ."
+      }
+    ];
+
+    let profitMargin=0;
+    let activeFilter="all";
+    let selectedProduct=null;
+    let cart=[];
+    let currentRecords=[];
+    let dataReady=false;
+
+    function adjusted(value) { return value * (1 + profitMargin / 100); }
+
+    function productStartingPrice(product) {
+      if (product.isFlexo) return adjusted(2.18);
+      if (product.id==="books") return adjusted(.4);
+      if (product.prices) return adjusted(Math.min(...product.prices.flat(Infinity)));
+      return 0;
+    }
+
+    function renderProducts() {
+      const grid=document.getElementById("product-grid");
+      const query=document.getElementById("search-input").value.trim().toLowerCase();
+      document.getElementById("admin-margin-value").textContent=`${profitMargin}%`;
+
+      const results=products.filter(product => {
+        const searchText=`${product.title} ${product.description} ${categoryNames[product.category]}`.toLowerCase();
+        return (activeFilter==="all" || product.category===activeFilter) && searchText.includes(query);
+      });
+
+      grid.innerHTML=results.map(product => `
+        <article class="product-card flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-700">
+              <div class="h-full w-full bg-slate-200"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              <span class="absolute right-4 top-4 rounded-full bg-slate-950/85 px-3 py-1 text-xs font-black text-white">${categoryNames[product.category]}</span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-black text-slate-950">${product.title}</h3>
+              <p class="mt-2.5 text-sm leading-7 text-slate-600">${product.description}</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between gap-3 border-t border-slate-100 p-6 pt-4">
+            <div class="flex flex-col gap-1"><span class="text-[11px] font-bold text-slate-400">السعر التقريبي</span><span class="price-chip inline-flex w-fit items-center rounded-xl px-3 py-2 text-sm font-black">يبدأ من ${currency(productStartingPrice(product))}${product.hasDimensions ? " / م²" : ""}</span></div>
+            <button type="button" data-product-id="${product.id}" class="product-open inline-flex items-center gap-1.5 rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
+              <span>التفاصيل</span><i data-lucide="arrow-left" class="h-4 w-4"></i>
+            </button>
+          </div>
+        </article>
+      `).join("");
+
+      document.getElementById("no-results").classList.toggle("hidden",results.length!==0);
+      lucide.createIcons();
+    }
+
+    function renderFlexoSizes(typeName) {
+      const sizeSelect=document.getElementById("option-1");
+      const sizes=flexoBags[typeName] || flexoBags["يد داخلية"];
+      sizeSelect.innerHTML=sizes.map((size,index)=>`<option value="${index}">${size[0]} — ${currency(adjusted(size[1]))} للقطعة</option>`).join("");
+    }
+
+    function openProduct(productId) {
+      selectedProduct=products.find(product=>product.id===productId);
+      const modal=document.getElementById("product-modal");
+      document.getElementById("modal-category").textContent=categoryNames[selectedProduct.category];
+      document.getElementById("modal-title").textContent=selectedProduct.title;
+      document.getElementById("modal-description").textContent=selectedProduct.description;
+      const modalImage=document.querySelector('[data-template-id="modal-product-image"]');
+      const indoorImage=document.querySelector('[data-template-id="modal-indoor-image"]');
+      const outdoorImage=document.querySelector('[data-template-id="modal-outdoor-image"]');
+      modalImage.classList.toggle("hidden",selectedProduct.id==="indoor" || selectedProduct.id==="outdoor");
+      indoorImage.classList.toggle("hidden",selectedProduct.id!=="indoor");
+      outdoorImage.classList.toggle("hidden",selectedProduct.id!=="outdoor");
+      modalImage.dataset.productImage=selectedProduct.id;
+      document.getElementById("modal-quantity").value=selectedProduct.isFlexo ? 1000 : 1;
+      document.getElementById("modal-quantity").min=selectedProduct.isFlexo ? 1000 : 1;
+      document.getElementById("quantity-label").textContent=selectedProduct.quantityLabel || "الكمية المطلوبة";
+      document.getElementById("quantity-label").parentElement.classList.toggle("hidden",!!selectedProduct.isPackage);
+
+      const dimensionsArea=document.getElementById("dimensions-area");
+      dimensionsArea.classList.toggle("hidden",!selectedProduct.hasDimensions);
+      if (selectedProduct.hasDimensions) {
+        document.getElementById("modal-width").value="1";
+        document.getElementById("modal-height").value="1";
+      }
+
+      const area=document.getElementById("options-area");
+      if (selectedProduct.isFlexo) {
+        area.innerHTML=`
+          <div>
+            <label for="option-0" class="mb-2 block text-xs font-black text-slate-700">نوع الشنطة</label>
+            <select id="option-0" class="product-option w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-sm font-bold outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+              ${Object.keys(flexoBags).map((name,index)=>`<option value="${index}">${name}</option>`).join("")}
+            </select>
+          </div>
+          <div>
+            <label for="option-1" class="mb-2 block text-xs font-black text-slate-700">المقاس</label>
+            <select id="option-1" class="product-option w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-sm font-bold outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"></select>
+          </div>
+        `;
+        renderFlexoSizes("يد داخلية");
+      } else {
+        area.innerHTML=(selectedProduct.options || []).map((option,index)=>`
+          <div>
+            <label for="option-${index}" class="mb-2 block text-xs font-black text-slate-700">${option.label}</label>
+            <select id="option-${index}" class="product-option w-full rounded-xl border border-slate-300 bg-white px-3.5 py-3 text-sm font-bold outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100">
+              ${option.values.map((value,valueIndex)=>`<option value="${valueIndex}">${value}</option>`).join("")}
+            </select>
+          </div>
+        `).join("");
+      }
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden","false");
+      updateModalPrice();
+      lucide.createIcons();
+    }
+
+    function closeProductModal() {
+      document.getElementById("product-modal").classList.remove("is-open");
+      document.getElementById("product-modal").setAttribute("aria-hidden","true");
+      selectedProduct=null;
+    }
+
+    function selections() {
+      return [...document.querySelectorAll(".product-option")].map(el=>Number(el.value));
+    }
+
+    function dimensions() {
+      return {
+        width:Math.max(.01,Number(document.getElementById("modal-width").value)||1),
+        height:Math.max(.01,Number(document.getElementById("modal-height").value)||1)
+      };
+    }
+
+    function calculate(product,quantity,selected,dims) {
+      let base=0;
+      if (product.isPackage) {
+        if (product.id==="screenbags") return adjusted(product.calculate(1,selected));
+        if (product.id==="cards") return adjusted(product.prices[selected[0] || 0][selected[1] || 0]);
+        return adjusted(product.prices[selected[0] || 0]);
+      } else if (product.isFlexo) {
+        const typeName=Object.keys(flexoBags)[selected[0] || 0];
+        const size=flexoBags[typeName][selected[1] || 0];
+        base=size[1] * quantity;
+      } else if (product.calculate) {
+        base=product.calculate(quantity,selected);
+      } else if (product.hasDimensions) {
+        base=product.prices[selected[0] || 0] * dims.width * dims.height * quantity;
+      } else {
+        base=product.prices[selected[0] || 0] * quantity;
+      }
+      return adjusted(base);
+    }
+
+    function modalDetails(selected,dims) {
+      if (selectedProduct.isFlexo) {
+        const typeName=Object.keys(flexoBags)[selected[0] || 0];
+        return [`نوع الشنطة: ${typeName}`,`المقاس: ${flexoBags[typeName][selected[1] || 0][0]}`];
+      }
+      const details=(selectedProduct.options || []).map((option,index)=>option.values[selected[index] || 0]);
+      if (selectedProduct.hasDimensions) details.push(`الأبعاد: ${dims.width}م × ${dims.height}م`);
+      return details;
+    }
+
+    function updateModalPrice() {
+      if (!selectedProduct) return;
+      const quantity=Math.max(Number(document.getElementById("modal-quantity").min)||1,Number(document.getElementById("modal-quantity").value)||1);
+      const selected=selections();
+      const dims=dimensions();
+      const total=calculate(selectedProduct,quantity,selected,dims);
+      document.getElementById("modal-price").textContent=currency(total);
+
+      let note=selectedProduct.note || "سعر تقديري قابل للتأكيد النهائي قبل التنفيذ.";
+      if (selectedProduct.hasDimensions) note+=` المساحة الكلية: ${Number((dims.width*dims.height*quantity).toFixed(2))} م².`;
+      if (selectedProduct.isFlexo && quantity<1000) note="الحد الأدنى لشنط الفليكسو هو 1,000 قطعة.";
+      document.getElementById("modal-price-note").textContent=note;
+    }
+
+    function addToCart(event) {
+      event.preventDefault();
+      if (!selectedProduct) return;
+
+      const minimum=Number(document.getElementById("modal-quantity").min)||1;
+      const quantity=Math.max(minimum,Number(document.getElementById("modal-quantity").value)||minimum);
+      document.getElementById("modal-quantity").value=quantity;
+      const selected=selections();
+      const dims=dimensions();
+      const details=modalDetails(selected,dims);
+      const key=`${selectedProduct.id}-${selected.join("-")}-${dims.width}x${dims.height}`;
+      const itemTotal=calculate(selectedProduct,quantity,selected,dims);
+      const existing=cart.find(item=>item.key===key);
+
+      if (existing) {
+        existing.quantity+=quantity;
+      } else {
+        cart.push({ key,title:selectedProduct.title,details,quantity,unitPrice:itemTotal/quantity,minimum });
+      }
+
+      renderCart();
+      closeProductModal();
+      openCart();
+    }
+
+    function renderCart() {
+      const items=document.getElementById("cart-items");
+      const empty=document.getElementById("cart-empty");
+      const total=cart.reduce((sum,item)=>sum+item.quantity*item.unitPrice,0);
+      const count=cart.reduce((sum,item)=>sum+item.quantity,0);
+
+      document.getElementById("cart-count").textContent=count;
+      document.getElementById("cart-total").textContent=currency(total);
+      document.getElementById("whatsapp-button").disabled=cart.length===0;
+      empty.classList.toggle("hidden",cart.length>0);
+      items.classList.toggle("hidden",cart.length===0);
+
+      items.innerHTML=cart.map(item=>`
+        <article class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-sm font-black text-slate-950">${item.title}</h3>
+              <p class="mt-1 text-xs font-bold leading-6 text-slate-600">${item.details.join(" • ")}</p>
+            </div>
+            <button type="button" data-action="remove" data-key="${item.key}" class="grid h-8 w-8 place-items-center rounded-lg bg-red-50 text-red-600 transition hover:bg-red-100" aria-label="حذف المنتج"><i data-lucide="trash-2" class="h-4 w-4"></i></button>
+          </div>
+          <div class="mt-4 flex items-center justify-between border-t border-slate-100 pt-3">
+            <div class="flex items-center gap-2">
+              <button type="button" data-action="increase" data-key="${item.key}" class="grid h-8 w-8 place-items-center rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100" aria-label="زيادة الكمية"><i data-lucide="plus" class="h-4 w-4"></i></button>
+              <span class="min-w-8 text-center text-xs font-black">${item.quantity}</span>
+              <button type="button" data-action="decrease" data-key="${item.key}" class="grid h-8 w-8 place-items-center rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100" aria-label="تقليل الكمية"><i data-lucide="minus" class="h-4 w-4"></i></button>
+            </div>
+            <strong class="text-sm font-black text-orange-600">${currency(item.unitPrice*item.quantity)}</strong>
+          </div>
+        </article>
+      `).join("");
+      lucide.createIcons();
+    }
+
+    function updateCartItem(key,action) {
+      const item=cart.find(entry=>entry.key===key);
+      if (!item) return;
+      if (action==="increase") item.quantity+=item.minimum || 1;
+      if (action==="decrease") item.quantity-=item.minimum || 1;
+      if (action==="remove" || item.quantity < item.minimum) cart=cart.filter(entry=>entry.key!==key);
+      renderCart();
+    }
+
+    function openCart() {
+      document.getElementById("cart-overlay").classList.remove("hidden");
+      document.getElementById("cart-drawer").classList.add("is-open");
+      document.getElementById("cart-drawer").setAttribute("aria-hidden","false");
+    }
+
+    function closeCart() {
+      document.getElementById("cart-overlay").classList.add("hidden");
+      document.getElementById("cart-drawer").classList.remove("is-open");
+      document.getElementById("cart-drawer").setAttribute("aria-hidden","true");
+    }
+
+    function setOrderMessage(message,type) {
+      const el=document.getElementById("order-message");
+      el.textContent=message;
+      el.classList.remove("hidden","text-emerald-700","text-red-600","text-slate-600");
+      el.classList.add(type==="error"?"text-red-600":type==="success"?"text-emerald-700":"text-slate-600");
+    }
+
+    function buildOrderSummary() {
+      return cart.map((item,index)=>`${index+1}. ${item.title} | ${item.details.join(" - ")} | الكمية: ${item.quantity} | الإجمالي: ${currency(item.quantity*item.unitPrice)}`).join("\n");
+    }
+
+    async function saveAndSendWhatsAppOrder() {
+      if (!cart.length) return;
+      if (!dataReady) {
+        setOrderMessage("جارٍ تجهيز سجل الطلبات، حاول مرة أخرى خلال لحظات.","info");
+        return;
+      }
+      if (currentRecords.length>=999) {
+        setOrderMessage("تم الوصول للحد الأقصى لسجل الطلبات.","error");
+        return;
+      }
+
+      const button=document.getElementById("whatsapp-button");
+      const total=cart.reduce((sum,item)=>sum+item.quantity*item.unitPrice,0);
+      const summary=buildOrderSummary();
+      button.disabled=true;
+      setOrderMessage("جارٍ حفظ الطلب في سجل الطلبات...","info");
+
+      const result=await window.dataSdk.create({
+        type:"طلب متجر",
+        customer_name:"عميل واتساب",
+        items_summary:summary,
+        total_price:currency(total),
+        order_date:new Date().toISOString(),
+        status:"جديد"
+      });
+
+      if (!result.isOk) {
+        button.disabled=false;
+        setOrderMessage("تعذر حفظ الطلب حالياً. يرجى المحاولة مرة أخرى.","error");
+        return;
+      }
+
+      const text=`السلام عليكم، أرغب في طلب المنتجات التالية من مطبعة طريق النور:\n\n${summary}\n\nالإجمالي التقديري: ${currency(total)}\n\nبرجاء تأكيد المواصفات وموعد التسليم.`;
+      setOrderMessage("تم حفظ الطلب وفتح واتساب في نافذة جديدة.","success");
+      window.open(`https://wa.me/201011060894?text=${encodeURIComponent(text)}`,"_blank","noopener,noreferrer");
+      button.disabled=false;
+    }
+
+    async function initializeOrdersSheet() {
+      const handler={
+        onDataChanged(data) {
+          currentRecords=data;
+          dataReady=true;
+          document.getElementById("admin-orders-count").textContent=data.length;
+        }
+      };
+      const result=await window.dataSdk.init(handler);
+      if (!result.isOk) {
+        dataReady=false;
+        setOrderMessage("تعذر الاتصال بسجل الطلبات حالياً، ويمكنك متابعة تجهيز السلة.","error");
+      }
+    }
+
+    function updateCalculator(event) {
+      if (event) event.preventDefault();
+      const quantity=Math.max(1,Number(document.getElementById("calc-quantity").value)||1);
+      const base=Math.max(0,Number(document.getElementById("calc-base").value)||0);
+      const extra=Math.max(0,Number(document.getElementById("calc-extra").value)||0);
+      const unit=adjusted(base+extra);
+      document.getElementById("calc-unit-result").textContent=currency(unit);
+      document.getElementById("calc-total-result").textContent=currency(unit*quantity);
+    }
+
+    document.getElementById("pricing-form").addEventListener("submit",event=>{
+      event.preventDefault();
+      profitMargin=Math.max(0,Math.min(500,Number(document.getElementById("margin-input").value)||0));
+      document.getElementById("margin-input").value=profitMargin;
+      const message=document.getElementById("margin-message");
+      message.textContent="تم تحديث هامش الربح وتطبيقه على الأسعار.";
+      message.className="mt-3 text-sm font-bold text-emerald-400";
+      renderProducts();
+      updateCalculator();
+    });
+
+    document.getElementById("calculator-form").addEventListener("submit",updateCalculator);
+    ["calc-quantity","calc-base","calc-extra"].forEach(id=>document.getElementById(id).addEventListener("input",updateCalculator));
+
+    document.getElementById("filter-list").addEventListener("click",event=>{
+      const button=event.target.closest("[data-filter]");
+      if (!button) return;
+      activeFilter=button.dataset.filter;
+      document.querySelectorAll(".filter-button").forEach(item=>item.classList.toggle("active",item===button));
+      renderProducts();
+    });
+
+    document.getElementById("search-input").addEventListener("input",renderProducts);
+    document.getElementById("faq-list").addEventListener("click",event=>{
+      const button=event.target.closest(".faq-toggle");
+      if (!button) return;
+      const answer=button.nextElementSibling;
+      const expanded=button.getAttribute("aria-expanded")==="true";
+      button.setAttribute("aria-expanded",String(!expanded));
+      answer.classList.toggle("hidden",expanded);
+    });
+    document.getElementById("admin-toggle").addEventListener("click",()=>{
+      const panel=document.getElementById("admin-panel");
+      const isHidden=panel.classList.toggle("hidden");
+      document.getElementById("admin-toggle").setAttribute("aria-expanded",String(!isHidden));
+      if (!isHidden) panel.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+    document.getElementById("product-grid").addEventListener("click",event=>{
+      const button=event.target.closest(".product-open");
+      if (button) openProduct(button.dataset.productId);
+    });
+
+    document.getElementById("close-modal").addEventListener("click",closeProductModal);
+    document.getElementById("product-modal").addEventListener("click",event=>{ if (event.target.id==="product-modal") closeProductModal(); });
+    document.getElementById("options-area").addEventListener("change",event=>{
+      if (selectedProduct?.isFlexo && event.target.id==="option-0") {
+        renderFlexoSizes(Object.keys(flexoBags)[Number(event.target.value)]);
+      }
+      updateModalPrice();
+    });
+
+    ["modal-width","modal-height","modal-quantity"].forEach(id=>document.getElementById(id).addEventListener("input",updateModalPrice));
+    document.getElementById("increase-quantity").addEventListener("click",()=>{
+      const input=document.getElementById("modal-quantity");
+      const step=selectedProduct?.isFlexo ? 1000 : 1;
+      input.value=Math.max(Number(input.min)||1,Number(input.value)||1)+step;
+      updateModalPrice();
+    });
+    document.getElementById("decrease-quantity").addEventListener("click",()=>{
+      const input=document.getElementById("modal-quantity");
+      const step=selectedProduct?.isFlexo ? 1000 : 1;
+      input.value=Math.max(Number(input.min)||1,(Number(input.value)||1)-step);
+      updateModalPrice();
+    });
+
+    document.getElementById("product-form").addEventListener("submit",addToCart);
+    document.getElementById("cart-button").addEventListener("click",openCart);
+    document.getElementById("close-cart").addEventListener("click",closeCart);
+    document.getElementById("cart-overlay").addEventListener("click",closeCart);
+    document.getElementById("whatsapp-button").addEventListener("click",saveAndSendWhatsAppOrder);
+    document.getElementById("cart-items").addEventListener("click",event=>{
+      const button=event.target.closest("[data-action]");
+      if (button) updateCartItem(button.dataset.key,button.dataset.action);
+    });
+
+    document.addEventListener("keydown",event=>{
+      if (event.key==="Escape") { closeProductModal(); closeCart(); }
+    });
+
+    let portfolioIndex=0;
+    const portfolioSlides=[...document.querySelectorAll(".portfolio-slide")];
+    function showPortfolioSlide(index) {
+      portfolioIndex=(index+portfolioSlides.length)%portfolioSlides.length;
+      portfolioSlides.forEach((slide,i)=>slide.classList.toggle("opacity-100",i===portfolioIndex));
+      portfolioSlides.forEach((slide,i)=>slide.classList.toggle("opacity-0",i!==portfolioIndex));
+    }
+    document.getElementById("portfolio-prev").addEventListener("click",()=>showPortfolioSlide(portfolioIndex-1));
+    document.getElementById("portfolio-next").addEventListener("click",()=>showPortfolioSlide(portfolioIndex+1));
+    setInterval(()=>showPortfolioSlide(portfolioIndex+1),5000);
+    renderProducts();
+    renderCart();
+    updateCalculator();
+    initializeOrdersSheet();
+    lucide.createIcons();
+  </script>
+ </body>
 </html>
