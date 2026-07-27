@@ -1,258 +1,309 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  X, Sparkles, ShoppingBag, Monitor, 
-  LayoutGrid, ChevronRight, ChevronLeft, Pause, Play, Maximize2 
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالي</title>
+    
+    <!-- تحميل مكتبة Tailwind CSS للتصميم -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- تحميل مكتبات React لتعمل مباشرة في المتصفح -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- تحميل Babel لتحويل كود React ليفهمه المتصفح -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-// بيانات المعارض مع مسارات الصور المحدثة لتطابق مجلد GitHub
-const galleriesData = {
-  balloons: {
-    id: 'balloons',
-    title: 'بالونات',
-    icon: <Sparkles className="w-5 h-5 ml-2" />,
-    images: [
-      { id: 'b1', src: 'images/p (1).jpg', alt: 'تنسيق بالونات لحفلة زفاف' },
-      { id: 'b2', src: 'images/p (2).jpg', alt: 'بوابة بالونات ملونة' },
-      { id: 'b3', src: 'images/p (3).jpg', alt: 'تزيين بالونات لأعياد الميلاد' },
-      { id: 'b4', src: 'images/p (4).jpg', alt: 'بالونات هيليوم بأشكال مميزة' },
-      { id: 'b5', src: 'images/p (5).jpg', alt: 'ديكور بالونات للمناسبات' },
-    ]
-  },
-  bags: {
-    id: 'bags',
-    title: 'شنط',
-    icon: <ShoppingBag className="w-5 h-5 ml-2" />,
-    images: [
-      { id: 'bg1', src: 'images/s (1).jpg', alt: 'شنطة نسائية فاخرة' },
-      { id: 'bg2', src: 'images/s (2).jpg', alt: 'حقيبة سفر عملية' },
-      { id: 'bg3', src: 'images/s (3).jpg', alt: 'شنطة ظهر جلدية' },
-      { id: 'bg4', src: 'images/s (4).jpg', alt: 'حقيبة يد للسهرات' },
-      { id: 'bg5', src: 'images/s (5).jpg', alt: 'شنطة كتف عصرية' },
-    ]
-  },
-  screens: {
-    id: 'screens',
-    title: 'شاشات',
-    icon: <Monitor className="w-5 h-5 ml-2" />,
-    images: [
-      { id: 's1', src: 'images/l (1).jpg', alt: 'شاشة عرض LED عملاقة' },
-      { id: 's2', src: 'images/l (2).jpg', alt: 'تجهيز شاشات للمؤتمرات' },
-      { id: 's3', src: 'images/l (3).jpg', alt: 'شاشات تفاعلية ذكية' },
-      { id: 's4', src: 'images/l (4).jpg', alt: 'شاشات عرض خارجية للإعلانات' },
-      { id: 's5', src: 'images/l (5).jpg', alt: 'تأجير شاشات للحفلات' },
-    ]
-  }
-};
-
-export default function App() {
-  const [activeTab, setActiveTab] = useState('balloons');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-
-  const currentImages = galleriesData[activeTab].images;
-
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [activeTab]);
-
-  useEffect(() => {
-    let interval;
-    if (isAutoPlaying && !isFullscreen) {
-      interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
-      }, 4000); 
-    }
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, isFullscreen, currentImages.length]);
-
-  const goToNext = useCallback(() => {
-    setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
-  }, [currentImages.length]);
-
-  const goToPrev = useCallback(() => {
-    setCurrentIndex((prev) => (prev === 0 ? currentImages.length - 1 : prev - 1));
-  }, [currentImages.length]);
-
-  return (
-    <div dir="rtl" className="min-h-screen bg-neutral-950 text-neutral-100 font-sans">
-      
-      <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800 shadow-lg">
-        <div className="container mx-auto px-4 py-4 sm:py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20">
-                <LayoutGrid className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-white tracking-tight">معرض أعمالي</h1>
-                <p className="text-sm text-neutral-400 mt-0.5">تصفح أحدث تجهيزاتنا ومنتجاتنا</p>
-              </div>
-            </div>
-
-            <nav className="flex flex-wrap justify-center gap-2 bg-neutral-900/50 p-1.5 rounded-2xl border border-neutral-800">
-              {Object.values(galleriesData).map((gallery) => (
-                <button
-                  key={gallery.id}
-                  onClick={() => setActiveTab(gallery.id)}
-                  className={`flex items-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl text-sm font-medium transition-all duration-500 ${
-                    activeTab === gallery.id
-                      ? 'bg-neutral-800 text-white shadow-md'
-                      : 'text-neutral-500 hover:text-white hover:bg-neutral-800/50'
-                  }`}
-                >
-                  <span className={`${activeTab === gallery.id ? 'text-blue-400' : ''}`}>
-                    {gallery.icon}
-                  </span>
-                  {gallery.title}
-                </button>
-              ))}
-            </nav>
-
-          </div>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-4 py-8">
-        <div 
-          className="relative w-full h-[50vh] sm:h-[65vh] lg:h-[75vh] rounded-[2rem] overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 group"
-          onMouseEnter={() => setIsAutoPlaying(false)}
-          onMouseLeave={() => setIsAutoPlaying(true)}
-        >
-          {currentImages.map((img, index) => (
-            <div
-              key={img.id}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                index === currentIndex 
-                  ? 'opacity-100 z-10 scale-100' 
-                  : 'opacity-0 z-0 scale-105 pointer-events-none'
-              }`}
-            >
-              <img 
-                src={img.src} 
-                alt={img.alt} 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  // عرض لون بديل في حال لم يتم العثور على الصورة
-                  e.target.style.display = 'none';
-                  e.target.parentElement.classList.add('bg-neutral-800', 'flex', 'items-center', 'justify-center');
-                  e.target.parentElement.innerHTML += '<span class="text-neutral-500">جاري تحميل الصورة...</span>';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12 transform transition-transform duration-1000">
-                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">{img.alt}</h3>
-                <span className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md text-blue-200 text-sm font-medium">
-                  {galleriesData[activeTab].title}
-                </span>
-              </div>
-            </div>
-          ))}
-
-          <div className="absolute inset-0 z-20 pointer-events-none flex justify-between items-center px-4 sm:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button 
-              onClick={goToNext}
-              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
-            >
-              <ChevronRight className="w-6 h-6 ml-1" />
-            </button>
-            
-            <button 
-              onClick={goToPrev}
-              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
-            >
-              <ChevronLeft className="w-6 h-6 mr-1" />
-            </button>
-          </div>
-
-          <div className="absolute top-6 left-6 z-20 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button 
-              onClick={() => setIsFullscreen(true)}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
-              title="تكبير الصورة"
-            >
-              <Maximize2 className="w-4 h-4" />
-            </button>
-            <button 
-              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
-              title={isAutoPlaying ? "إيقاف مؤقت" : "تشغيل تلقائي"}
-            >
-              {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-            </button>
-          </div>
-
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            {currentImages.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`transition-all duration-500 rounded-full h-1.5 ${
-                  idx === currentIndex ? 'w-8 bg-blue-500' : 'w-2 bg-white/40 hover:bg-white/80'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-6 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
-          {currentImages.map((img, index) => (
-            <button
-              key={img.id}
-              onClick={() => setCurrentIndex(index)}
-              className={`relative shrink-0 w-32 h-24 rounded-xl overflow-hidden transition-all duration-300 snap-center border-2 ${
-                index === currentIndex 
-                  ? 'border-blue-500 opacity-100 scale-105 shadow-lg shadow-blue-500/20' 
-                  : 'border-transparent opacity-40 hover:opacity-100'
-              }`}
-            >
-              <img src={img.src} alt="Thumbnail" className="w-full h-full object-cover bg-neutral-800" />
-            </button>
-          ))}
-        </div>
-      </main>
-
-      {isFullscreen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl">
-          <button 
-            onClick={() => setIsFullscreen(false)}
-            className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-red-500/90 text-white rounded-full backdrop-blur-md transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
-          
-          <img 
-            src={currentImages[currentIndex].src} 
-            alt={currentImages[currentIndex].alt} 
-            className="max-w-full max-h-screen object-contain animate-zoom-in"
-          />
-          
-          <div className="absolute bottom-8 text-center w-full">
-            <span className="bg-black/70 text-white px-6 py-2 rounded-full backdrop-blur-md text-lg shadow-xl">
-              {currentImages[currentIndex].alt}
-            </span>
-          </div>
-        </div>
-      )}
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    <!-- تنسيقات إضافية للحركات (Animations) وإخفاء شريط التمرير -->
+    <style>
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         @keyframes zoomIn {
           from { transform: scale(0.95); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
         }
-        .animate-zoom-in {
-          animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        .animate-zoom-in { animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+    </style>
+</head>
+<body class="bg-neutral-950">
+    
+    <!-- المكان الذي سيتم عرض الموقع فيه -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useCallback } = React;
+
+        // الأيقونات كـ SVG مدمج بدلاً من مكتبة خارجية لضمان العمل المستقر على جيت هاب
+        const IconSparkles = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>);
+        const IconShoppingBag = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>);
+        const IconMonitor = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>);
+        const IconLayoutGrid = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>);
+        const IconChevronRight = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>);
+        const IconChevronLeft = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>);
+        const IconPause = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="4" height="16" x="6" y="4"/><rect width="4" height="16" x="14" y="4"/></svg>);
+        const IconPlay = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg>);
+        const IconMaximize2 = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></svg>);
+        const IconX = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>);
+
+        // بيانات المعارض (بالونات، شنط، شاشات) - معدلة لتناسب مجال الدعاية والإعلان
+        const galleriesData = {
+          balloons: {
+            id: 'balloons',
+            title: 'بالونات مطبوعة',
+            icon: <IconSparkles className="w-5 h-5 ml-2" />,
+            images: [
+              { id: 'b1', src: 'images/p (1).jpg', alt: 'طباعة شعارات على البالونات' },
+              { id: 'b2', src: 'images/p (2).jpg', alt: 'بالونات إعلانية للشركات' },
+              { id: 'b3', src: 'images/p (3).jpg', alt: 'طباعة لوجو للمحلات التجارية' },
+              { id: 'b4', src: 'images/p (4).jpg', alt: 'بالونات مطبوعة للحملات الترويجية' },
+              { id: 'b5', src: 'images/p (5).jpg', alt: 'طباعة بالونات لافتتاحات المحلات' },
+              { id: 'b6', src: 'images/p (6).jpg', alt: 'تنفيذ بالونات دعاية مخصصة' },
+              { id: 'b7', src: 'images/p (7).jpg', alt: 'طباعة بجودة عالية على البالونات' },
+              { id: 'b8', src: 'images/p (8).jpg', alt: 'بالونات إعلانات بألوان جذابة' },
+              { id: 'b9', src: 'images/p (9).jpg', alt: 'طباعة كميات لفعاليات الشركات' },
+              { id: 'b10', src: 'images/p (10).jpg', alt: 'دعاية وإعلان على البالونات' },
+            ]
+          },
+          bags: {
+            id: 'bags',
+            title: 'شنط دعاية',
+            icon: <IconShoppingBag className="w-5 h-5 ml-2" />,
+            images: [
+              { id: 'bg1', src: 'images/s (1).jpg', alt: 'شنط قماش مطبوعة للمحلات' },
+              { id: 'bg2', src: 'images/s (2).jpg', alt: 'شنط دعاية غير منسوجة' },
+              { id: 'bg3', src: 'images/s (3).jpg', alt: 'طباعة شنط تسوق تحمل شعارك' },
+              { id: 'bg4', src: 'images/s (4).jpg', alt: 'شنط هدايا ومبيعات مطبوعة' },
+              { id: 'bg5', src: 'images/s (5).jpg', alt: 'شنط قماشية صديقة للبيئة' },
+              { id: 'bg6', src: 'images/s (6).jpg', alt: 'تغليف تجاري وشنط دعاية' },
+              { id: 'bg7', src: 'images/s (7).jpg', alt: 'طباعة وتصميم شنط المحلات' },
+              { id: 'bg8', src: 'images/s (8).jpg', alt: 'شنط قماش مخصصة للعلامات التجارية' },
+              { id: 'bg9', src: 'images/s (9).jpg', alt: 'شنط دعاية اقتصادية وعملية' },
+              { id: 'bg10', src: 'images/s (10).jpg', alt: 'تنفيذ شنط قماش بألوان متعددة' },
+            ]
+          },
+          screens: {
+            id: 'screens',
+            title: 'شاشات إعلانية',
+            icon: <IconMonitor className="w-5 h-5 ml-2" />,
+            images: [
+              { id: 's1', src: 'images/l (1).jpg', alt: 'شاشات ليد إعلانية للمحلات' },
+              { id: 's2', src: 'images/l (2).jpg', alt: 'تركيب شاشات عرض خارجية' },
+              { id: 's3', src: 'images/l (3).jpg', alt: 'لوحات وشاشات إعلانية مضيئة' },
+              { id: 's4', src: 'images/l (4).jpg', alt: 'شاشات فيديو دعائية' },
+              { id: 's5', src: 'images/l (5).jpg', alt: 'شاشات إعلانية للواجهات' },
+              { id: 's6', src: 'images/l (6).jpg', alt: 'شاشات نصية متحركة للدعاية' },
+              { id: 's7', src: 'images/l (7).jpg', alt: 'تجهيز واجهات إلكترونية' },
+              { id: 's8', src: 'images/l (8).jpg', alt: 'شاشات عرض داخلية للشركات' },
+              { id: 's9', src: 'images/l (9).jpg', alt: 'حلول الشاشات الإعلانية المتكاملة' },
+              { id: 's10', src: 'images/l (10).jpg', alt: 'شاشات إعلانات رقمية' },
+            ]
+          }
+        };
+
+        function App() {
+          const [activeTab, setActiveTab] = useState('balloons');
+          const [currentIndex, setCurrentIndex] = useState(0);
+          const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+          const [isFullscreen, setIsFullscreen] = useState(false);
+
+          const currentImages = galleriesData[activeTab].images;
+
+          useEffect(() => {
+            setCurrentIndex(0);
+          }, [activeTab]);
+
+          useEffect(() => {
+            let interval;
+            if (isAutoPlaying && !isFullscreen) {
+              interval = setInterval(() => {
+                setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
+              }, 4000); 
+            }
+            return () => clearInterval(interval);
+          }, [isAutoPlaying, isFullscreen, currentImages.length]);
+
+          const goToNext = useCallback(() => {
+            setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
+          }, [currentImages.length]);
+
+          const goToPrev = useCallback(() => {
+            setCurrentIndex((prev) => (prev === 0 ? currentImages.length - 1 : prev - 1));
+          }, [currentImages.length]);
+
+          return (
+            <div className="min-h-screen text-neutral-100 font-sans pb-10">
+              
+              <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800 shadow-lg">
+                <div className="container mx-auto px-4 py-4 sm:py-6">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <IconLayoutGrid className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h1 className="text-2xl font-bold text-white tracking-tight">النور للدعاية والإعلان</h1>
+                        <p className="text-sm text-neutral-400 mt-0.5">حلول الطباعة، التغليف، والشاشات الإعلانية</p>
+                      </div>
+                    </div>
+
+                    <nav className="flex flex-wrap justify-center gap-2 bg-neutral-900/50 p-1.5 rounded-2xl border border-neutral-800">
+                      {Object.values(galleriesData).map((gallery) => (
+                        <button
+                          key={gallery.id}
+                          onClick={() => setActiveTab(gallery.id)}
+                          className={`flex items-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl text-sm font-medium transition-all duration-500 ${
+                            activeTab === gallery.id
+                              ? 'bg-neutral-800 text-white shadow-md'
+                              : 'text-neutral-500 hover:text-white hover:bg-neutral-800/50'
+                          }`}
+                        >
+                          <span className={`${activeTab === gallery.id ? 'text-blue-400' : ''}`}>
+                            {gallery.icon}
+                          </span>
+                          {gallery.title}
+                        </button>
+                      ))}
+                    </nav>
+
+                  </div>
+                </div>
+              </header>
+
+              <main className="container mx-auto px-4 py-8">
+                
+                {}
+                <div 
+                  className="relative w-full h-[50vh] sm:h-[65vh] lg:h-[75vh] rounded-[2rem] overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 group"
+                  onMouseEnter={() => setIsAutoPlaying(false)}
+                  onMouseLeave={() => setIsAutoPlaying(true)}
+                >
+                  {currentImages.map((img, index) => (
+                    <div
+                      key={img.id}
+                      className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                        index === currentIndex 
+                          ? 'opacity-100 z-10 scale-100' 
+                          : 'opacity-0 z-0 scale-105 pointer-events-none'
+                      }`}
+                    >
+                      <img 
+                        src={img.src} 
+                        alt={img.alt} 
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // معالجة الخطأ إذا لم يتم العثور على الصورة
+                          e.target.style.display = 'none';
+                          e.target.parentElement.classList.add('bg-neutral-800', 'flex', 'items-center', 'justify-center');
+                          e.target.parentElement.innerHTML += '<span class="text-neutral-500 text-center px-4">جاري تحميل الصورة...<br/>تأكد من وجود ' + img.src + '</span>';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12 transform transition-transform duration-1000">
+                        <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">{img.alt}</h3>
+                        <span className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md text-blue-200 text-sm font-medium">
+                          {galleriesData[activeTab].title}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+
+                  <div className="absolute inset-0 z-20 pointer-events-none flex justify-between items-center px-4 sm:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button 
+                      onClick={goToNext}
+                      className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
+                    >
+                      <IconChevronRight className="w-6 h-6 ml-1" />
+                    </button>
+                    
+                    <button 
+                      onClick={goToPrev}
+                      className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
+                    >
+                      <IconChevronLeft className="w-6 h-6 mr-1" />
+                    </button>
+                  </div>
+
+                  <div className="absolute top-6 left-6 z-20 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button 
+                      onClick={() => setIsFullscreen(true)}
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
+                      title="تكبير الصورة"
+                    >
+                      <IconMaximize2 className="w-4 h-4" />
+                    </button>
+                    <button 
+                      onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
+                      title={isAutoPlaying ? "إيقاف مؤقت" : "تشغيل تلقائي"}
+                    >
+                      {isAutoPlaying ? <IconPause className="w-4 h-4" /> : <IconPlay className="w-4 h-4" />}
+                    </button>
+                  </div>
+
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                    {currentImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`transition-all duration-500 rounded-full h-1.5 ${
+                          idx === currentIndex ? 'w-8 bg-blue-500' : 'w-2 bg-white/40 hover:bg-white/80'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {}
+                <div className="mt-6 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
+                  {currentImages.map((img, index) => (
+                    <button
+                      key={img.id}
+                      onClick={() => setCurrentIndex(index)}
+                      className={`relative shrink-0 w-32 h-24 rounded-xl overflow-hidden transition-all duration-300 snap-center border-2 ${
+                        index === currentIndex 
+                          ? 'border-blue-500 opacity-100 scale-105 shadow-lg shadow-blue-500/20' 
+                          : 'border-transparent opacity-40 hover:opacity-100'
+                      }`}
+                    >
+                      <img src={img.src} alt="Thumbnail" className="w-full h-full object-cover bg-neutral-800" />
+                    </button>
+                  ))}
+                </div>
+              </main>
+
+              {}
+              {isFullscreen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl">
+                  <button 
+                    onClick={() => setIsFullscreen(false)}
+                    className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-red-500/90 text-white rounded-full backdrop-blur-md transition-colors"
+                  >
+                    <IconX className="w-6 h-6" />
+                  </button>
+                  
+                  <img 
+                    src={currentImages[currentIndex].src} 
+                    alt={currentImages[currentIndex].alt} 
+                    className="max-w-full max-h-screen object-contain animate-zoom-in"
+                  />
+                  
+                  <div className="absolute bottom-8 text-center w-full">
+                    <span className="bg-black/70 text-white px-6 py-2 rounded-full backdrop-blur-md text-lg shadow-xl">
+                      {currentImages[currentIndex].alt}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
         }
-      `}} />
-    </div>
-  );
-}
+
+        // تشغيل التطبيق
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
