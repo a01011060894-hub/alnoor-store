@@ -159,7 +159,7 @@
                 
                 {}
                 <div 
-                  className="relative w-full h-[50vh] sm:h-[65vh] lg:h-[75vh] rounded-[2rem] overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 group"
+                  className="relative w-full max-w-xl mx-auto aspect-[10/12] rounded-[2rem] overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 group"
                   onMouseEnter={() => setIsAutoPlaying(false)}
                   onMouseLeave={() => setIsAutoPlaying(true)}
                 >
@@ -175,7 +175,7 @@
                       <img 
                         src={img.src} 
                         alt={img.alt} 
-                        className="w-full h-full object-contain pb-24 pt-8 px-4 sm:px-12"
+                        className="w-full h-full object-contain pb-28 pt-6 px-4 sm:px-8"
                         onError={(e) => {
                           // معالجة الخطأ إذا لم يتم العثور على الصورة
                           e.target.style.display = 'none';
@@ -241,12 +241,12 @@
                 </div>
 
                 {}
-                <div className="mt-6 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
+                <div className="mt-6 max-w-xl mx-auto flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
                   {currentImages.map((img, index) => (
                     <button
                       key={img.id}
                       onClick={() => setCurrentIndex(index)}
-                      className={`relative shrink-0 w-32 h-24 rounded-xl overflow-hidden transition-all duration-300 snap-center border-2 ${
+                      className={`relative shrink-0 w-24 h-28 sm:w-32 sm:h-36 rounded-xl overflow-hidden transition-all duration-300 snap-center border-2 ${
                         index === currentIndex 
                           ? 'border-blue-500 opacity-100 scale-105 shadow-lg shadow-blue-500/20' 
                           : 'border-transparent opacity-40 hover:opacity-100'
