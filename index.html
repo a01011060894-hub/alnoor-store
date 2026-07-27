@@ -175,7 +175,7 @@
                       <img 
                         src={img.src} 
                         alt={img.alt} 
-                        className="w-full h-full object-contain pb-28 pt-6 px-4 sm:px-8"
+                        className="w-full h-full object-cover"
                         onError={(e) => {
                           // معالجة الخطأ إذا لم يتم العثور على الصورة
                           e.target.style.display = 'none';
@@ -252,7 +252,7 @@
                           : 'border-transparent opacity-40 hover:opacity-100'
                       }`}
                     >
-                      <img src={img.src} alt="Thumbnail" className="w-full h-full object-contain bg-neutral-900 p-1" />
+                      <img src={img.src} alt="Thumbnail" className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
