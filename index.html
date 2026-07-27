@@ -1,2 +1,258 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+import React, { useState, useEffect, useCallback } from 'react';
+import { 
+  X, Sparkles, ShoppingBag, Monitor, 
+  LayoutGrid, ChevronRight, ChevronLeft, Pause, Play, Maximize2 
+} from 'lucide-react';
+
+// بيانات المعارض مع مسارات الصور المحدثة لتطابق مجلد GitHub
+const galleriesData = {
+  balloons: {
+    id: 'balloons',
+    title: 'بالونات',
+    icon: <Sparkles className="w-5 h-5 ml-2" />,
+    images: [
+      { id: 'b1', src: 'images/p (1).jpg', alt: 'تنسيق بالونات لحفلة زفاف' },
+      { id: 'b2', src: 'images/p (2).jpg', alt: 'بوابة بالونات ملونة' },
+      { id: 'b3', src: 'images/p (3).jpg', alt: 'تزيين بالونات لأعياد الميلاد' },
+      { id: 'b4', src: 'images/p (4).jpg', alt: 'بالونات هيليوم بأشكال مميزة' },
+      { id: 'b5', src: 'images/p (5).jpg', alt: 'ديكور بالونات للمناسبات' },
+    ]
+  },
+  bags: {
+    id: 'bags',
+    title: 'شنط',
+    icon: <ShoppingBag className="w-5 h-5 ml-2" />,
+    images: [
+      { id: 'bg1', src: 'images/s (1).jpg', alt: 'شنطة نسائية فاخرة' },
+      { id: 'bg2', src: 'images/s (2).jpg', alt: 'حقيبة سفر عملية' },
+      { id: 'bg3', src: 'images/s (3).jpg', alt: 'شنطة ظهر جلدية' },
+      { id: 'bg4', src: 'images/s (4).jpg', alt: 'حقيبة يد للسهرات' },
+      { id: 'bg5', src: 'images/s (5).jpg', alt: 'شنطة كتف عصرية' },
+    ]
+  },
+  screens: {
+    id: 'screens',
+    title: 'شاشات',
+    icon: <Monitor className="w-5 h-5 ml-2" />,
+    images: [
+      { id: 's1', src: 'images/l (1).jpg', alt: 'شاشة عرض LED عملاقة' },
+      { id: 's2', src: 'images/l (2).jpg', alt: 'تجهيز شاشات للمؤتمرات' },
+      { id: 's3', src: 'images/l (3).jpg', alt: 'شاشات تفاعلية ذكية' },
+      { id: 's4', src: 'images/l (4).jpg', alt: 'شاشات عرض خارجية للإعلانات' },
+      { id: 's5', src: 'images/l (5).jpg', alt: 'تأجير شاشات للحفلات' },
+    ]
+  }
+};
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState('balloons');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const currentImages = galleriesData[activeTab].images;
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [activeTab]);
+
+  useEffect(() => {
+    let interval;
+    if (isAutoPlaying && !isFullscreen) {
+      interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
+      }, 4000); 
+    }
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, isFullscreen, currentImages.length]);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev === currentImages.length - 1 ? 0 : prev + 1));
+  }, [currentImages.length]);
+
+  const goToPrev = useCallback(() => {
+    setCurrentIndex((prev) => (prev === 0 ? currentImages.length - 1 : prev - 1));
+  }, [currentImages.length]);
+
+  return (
+    <div dir="rtl" className="min-h-screen bg-neutral-950 text-neutral-100 font-sans">
+      
+      <header className="sticky top-0 z-40 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800 shadow-lg">
+        <div className="container mx-auto px-4 py-4 sm:py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                <LayoutGrid className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-white tracking-tight">معرض أعمالي</h1>
+                <p className="text-sm text-neutral-400 mt-0.5">تصفح أحدث تجهيزاتنا ومنتجاتنا</p>
+              </div>
+            </div>
+
+            <nav className="flex flex-wrap justify-center gap-2 bg-neutral-900/50 p-1.5 rounded-2xl border border-neutral-800">
+              {Object.values(galleriesData).map((gallery) => (
+                <button
+                  key={gallery.id}
+                  onClick={() => setActiveTab(gallery.id)}
+                  className={`flex items-center px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl text-sm font-medium transition-all duration-500 ${
+                    activeTab === gallery.id
+                      ? 'bg-neutral-800 text-white shadow-md'
+                      : 'text-neutral-500 hover:text-white hover:bg-neutral-800/50'
+                  }`}
+                >
+                  <span className={`${activeTab === gallery.id ? 'text-blue-400' : ''}`}>
+                    {gallery.icon}
+                  </span>
+                  {gallery.title}
+                </button>
+              ))}
+            </nav>
+
+          </div>
+        </div>
+      </header>
+
+      <main className="container mx-auto px-4 py-8">
+        <div 
+          className="relative w-full h-[50vh] sm:h-[65vh] lg:h-[75vh] rounded-[2rem] overflow-hidden bg-neutral-900 shadow-2xl border border-neutral-800 group"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+        >
+          {currentImages.map((img, index) => (
+            <div
+              key={img.id}
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                index === currentIndex 
+                  ? 'opacity-100 z-10 scale-100' 
+                  : 'opacity-0 z-0 scale-105 pointer-events-none'
+              }`}
+            >
+              <img 
+                src={img.src} 
+                alt={img.alt} 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // عرض لون بديل في حال لم يتم العثور على الصورة
+                  e.target.style.display = 'none';
+                  e.target.parentElement.classList.add('bg-neutral-800', 'flex', 'items-center', 'justify-center');
+                  e.target.parentElement.innerHTML += '<span class="text-neutral-500">جاري تحميل الصورة...</span>';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              
+              <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12 transform transition-transform duration-1000">
+                <h3 className="text-2xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">{img.alt}</h3>
+                <span className="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md text-blue-200 text-sm font-medium">
+                  {galleriesData[activeTab].title}
+                </span>
+              </div>
+            </div>
+          ))}
+
+          <div className="absolute inset-0 z-20 pointer-events-none flex justify-between items-center px-4 sm:px-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button 
+              onClick={goToNext}
+              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
+            >
+              <ChevronRight className="w-6 h-6 ml-1" />
+            </button>
+            
+            <button 
+              onClick={goToPrev}
+              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10 hover:scale-110"
+            >
+              <ChevronLeft className="w-6 h-6 mr-1" />
+            </button>
+          </div>
+
+          <div className="absolute top-6 left-6 z-20 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button 
+              onClick={() => setIsFullscreen(true)}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
+              title="تكبير الصورة"
+            >
+              <Maximize2 className="w-4 h-4" />
+            </button>
+            <button 
+              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white backdrop-blur-md transition-all border border-white/10"
+              title={isAutoPlaying ? "إيقاف مؤقت" : "تشغيل تلقائي"}
+            >
+              {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            </button>
+          </div>
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {currentImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`transition-all duration-500 rounded-full h-1.5 ${
+                  idx === currentIndex ? 'w-8 bg-blue-500' : 'w-2 bg-white/40 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
+          {currentImages.map((img, index) => (
+            <button
+              key={img.id}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative shrink-0 w-32 h-24 rounded-xl overflow-hidden transition-all duration-300 snap-center border-2 ${
+                index === currentIndex 
+                  ? 'border-blue-500 opacity-100 scale-105 shadow-lg shadow-blue-500/20' 
+                  : 'border-transparent opacity-40 hover:opacity-100'
+              }`}
+            >
+              <img src={img.src} alt="Thumbnail" className="w-full h-full object-cover bg-neutral-800" />
+            </button>
+          ))}
+        </div>
+      </main>
+
+      {isFullscreen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl">
+          <button 
+            onClick={() => setIsFullscreen(false)}
+            className="absolute top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-red-500/90 text-white rounded-full backdrop-blur-md transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          
+          <img 
+            src={currentImages[currentIndex].src} 
+            alt={currentImages[currentIndex].alt} 
+            className="max-w-full max-h-screen object-contain animate-zoom-in"
+          />
+          
+          <div className="absolute bottom-8 text-center w-full">
+            <span className="bg-black/70 text-white px-6 py-2 rounded-full backdrop-blur-md text-lg shadow-xl">
+              {currentImages[currentIndex].alt}
+            </span>
+          </div>
+        </div>
+      )}
+
+      <style dangerouslySetInnerHTML={{__html: `
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @keyframes zoomIn {
+          from { transform: scale(0.95); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+        .animate-zoom-in {
+          animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+      `}} />
+    </div>
+  );
+}
