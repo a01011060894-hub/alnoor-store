@@ -46,58 +46,42 @@
         const IconMaximize2 = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></svg>);
         const IconX = ({ className }) => (<svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>);
 
-        // بيانات المعارض (بالونات، شنط، شاشات) - معدلة لتناسب مجال الدعاية والإعلان
+        // بيانات المعارض - مبرمجة لتوليد 25 صورة لكل قسم تلقائياً
+        // هذه الجمل ستتكرر على الصور كنوع من التنوع في الوصف
+        const balloonsDescriptions = ['طباعة شعارات على البالونات', 'بالونات إعلانية للشركات', 'طباعة لوجو للمحلات التجارية', 'بالونات مطبوعة للحملات الترويجية', 'طباعة بالونات لافتتاحات المحلات'];
+        const bagsDescriptions = ['شنط قماش مطبوعة للمحلات', 'شنط دعاية غير منسوجة', 'طباعة شنط تسوق تحمل شعارك', 'شنط هدايا ومبيعات مطبوعة', 'شنط قماشية صديقة للبيئة'];
+        const screensDescriptions = ['شاشات ليد إعلانية للمحلات', 'تركيب شاشات عرض خارجية', 'لوحات وشاشات إعلانية مضيئة', 'شاشات فيديو دعائية', 'شاشات إعلانية للواجهات'];
+
         const galleriesData = {
           balloons: {
             id: 'balloons',
             title: 'بالونات مطبوعة',
             icon: <IconSparkles className="w-5 h-5 ml-2" />,
-            images: [
-              { id: 'b1', src: 'images/p (1).jpg', alt: 'طباعة شعارات على البالونات' },
-              { id: 'b2', src: 'images/p (2).jpg', alt: 'بالونات إعلانية للشركات' },
-              { id: 'b3', src: 'images/p (3).jpg', alt: 'طباعة لوجو للمحلات التجارية' },
-              { id: 'b4', src: 'images/p (4).jpg', alt: 'بالونات مطبوعة للحملات الترويجية' },
-              { id: 'b5', src: 'images/p (5).jpg', alt: 'طباعة بالونات لافتتاحات المحلات' },
-              { id: 'b6', src: 'images/p (6).jpg', alt: 'تنفيذ بالونات دعاية مخصصة' },
-              { id: 'b7', src: 'images/p (7).jpg', alt: 'طباعة بجودة عالية على البالونات' },
-              { id: 'b8', src: 'images/p (8).jpg', alt: 'بالونات إعلانات بألوان جذابة' },
-              { id: 'b9', src: 'images/p (9).jpg', alt: 'طباعة كميات لفعاليات الشركات' },
-              { id: 'b10', src: 'images/p (10).jpg', alt: 'دعاية وإعلان على البالونات' },
-            ]
+            images: Array.from({ length: 25 }, (_, i) => ({
+              id: `b${i + 1}`,
+              src: `images/p (${i + 1}).jpg`,
+              alt: balloonsDescriptions[i % 5]
+            }))
           },
           bags: {
             id: 'bags',
             title: 'شنط دعاية',
             icon: <IconShoppingBag className="w-5 h-5 ml-2" />,
-            images: [
-              { id: 'bg1', src: 'images/s (1).jpg', alt: 'شنط قماش مطبوعة للمحلات' },
-              { id: 'bg2', src: 'images/s (2).jpg', alt: 'شنط دعاية غير منسوجة' },
-              { id: 'bg3', src: 'images/s (3).jpg', alt: 'طباعة شنط تسوق تحمل شعارك' },
-              { id: 'bg4', src: 'images/s (4).jpg', alt: 'شنط هدايا ومبيعات مطبوعة' },
-              { id: 'bg5', src: 'images/s (5).jpg', alt: 'شنط قماشية صديقة للبيئة' },
-              { id: 'bg6', src: 'images/s (6).jpg', alt: 'تغليف تجاري وشنط دعاية' },
-              { id: 'bg7', src: 'images/s (7).jpg', alt: 'طباعة وتصميم شنط المحلات' },
-              { id: 'bg8', src: 'images/s (8).jpg', alt: 'شنط قماش مخصصة للعلامات التجارية' },
-              { id: 'bg9', src: 'images/s (9).jpg', alt: 'شنط دعاية اقتصادية وعملية' },
-              { id: 'bg10', src: 'images/s (10).jpg', alt: 'تنفيذ شنط قماش بألوان متعددة' },
-            ]
+            images: Array.from({ length: 25 }, (_, i) => ({
+              id: `bg${i + 1}`,
+              src: `images/s (${i + 1}).jpg`,
+              alt: bagsDescriptions[i % 5]
+            }))
           },
           screens: {
             id: 'screens',
             title: 'شاشات إعلانية',
             icon: <IconMonitor className="w-5 h-5 ml-2" />,
-            images: [
-              { id: 's1', src: 'images/l (1).jpg', alt: 'شاشات ليد إعلانية للمحلات' },
-              { id: 's2', src: 'images/l (2).jpg', alt: 'تركيب شاشات عرض خارجية' },
-              { id: 's3', src: 'images/l (3).jpg', alt: 'لوحات وشاشات إعلانية مضيئة' },
-              { id: 's4', src: 'images/l (4).jpg', alt: 'شاشات فيديو دعائية' },
-              { id: 's5', src: 'images/l (5).jpg', alt: 'شاشات إعلانية للواجهات' },
-              { id: 's6', src: 'images/l (6).jpg', alt: 'شاشات نصية متحركة للدعاية' },
-              { id: 's7', src: 'images/l (7).jpg', alt: 'تجهيز واجهات إلكترونية' },
-              { id: 's8', src: 'images/l (8).jpg', alt: 'شاشات عرض داخلية للشركات' },
-              { id: 's9', src: 'images/l (9).jpg', alt: 'حلول الشاشات الإعلانية المتكاملة' },
-              { id: 's10', src: 'images/l (10).jpg', alt: 'شاشات إعلانات رقمية' },
-            ]
+            images: Array.from({ length: 25 }, (_, i) => ({
+              id: `s${i + 1}`,
+              src: `images/l (${i + 1}).jpg`,
+              alt: screensDescriptions[i % 5]
+            }))
           }
         };
 
@@ -191,7 +175,7 @@
                       <img 
                         src={img.src} 
                         alt={img.alt} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain pb-24 pt-8 px-4 sm:px-12"
                         onError={(e) => {
                           // معالجة الخطأ إذا لم يتم العثور على الصورة
                           e.target.style.display = 'none';
@@ -268,7 +252,7 @@
                           : 'border-transparent opacity-40 hover:opacity-100'
                       }`}
                     >
-                      <img src={img.src} alt="Thumbnail" className="w-full h-full object-cover bg-neutral-800" />
+                      <img src={img.src} alt="Thumbnail" className="w-full h-full object-contain bg-neutral-900 p-1" />
                     </button>
                   ))}
                 </div>
